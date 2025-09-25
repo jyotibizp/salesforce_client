@@ -1,0 +1,9 @@
+azure-functions==1.21.3
+azure-storage-blob==12.23.1
+python-dotenv==1.0.1
+grpcio==1.66.1
+protobuf==5.28.2
+PyJWT[crypto]==2.9.0
+cryptography==43.0.1
+requests==2.32.3
+

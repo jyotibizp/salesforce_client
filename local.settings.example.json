@@ -1,0 +1,21 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+    "FUNCTIONS_WORKER_RUNTIME": "python",
+    "PYTHON_ENABLE_WORKER_EXTENSIONS": "1",
+
+    "SF_CLIENT_ID": "<salesforce_connected_app_client_id>",
+    "SF_USERNAME": "<salesforce_user_email>",
+    "SF_LOGIN_URL": "https://login.salesforce.com",
+    "SF_AUDIENCE": "https://login.salesforce.com",
+    "SF_PRIVATE_KEY_PATH": "certs/private.key",
+    "SF_TOPIC_NAMES": "/event/Delete_Logs__e",
+
+    "AZURE_STORAGE_CONNECTION_STRING": "<storage_connection_string>",
+    "AZURE_BLOB_CONTAINER": "events",
+
+    "SQLITE_DB_DIR": "data"
+  }
+}
+
