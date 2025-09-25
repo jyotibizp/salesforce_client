@@ -11,11 +11,7 @@ from src.app.storage.sqlite_writer import write_events
 from src.app.storage.azure_blob import upload_file
 
 
-app = func.FunctionApp()
-
-
-@app.schedule(schedule="0 */30 * * * *", arg_name="myTimer", run_on_startup=False, use_monitor=True)
-def timer_poller(myTimer: func.TimerRequest) -> None:
+def main(myTimer: func.TimerRequest) -> None:
     if myTimer.past_due:
         logging.info("The timer is past due!")
 
