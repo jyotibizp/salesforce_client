@@ -11,6 +11,7 @@ certs/*
 *.sqlite*
 data/
 artifacts/
+local_storage/
 .DS_Store
 .vscode/
 .idea/

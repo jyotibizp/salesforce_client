@@ -43,9 +43,7 @@ The timer trigger runs every 30 minutes. Logs show fetched event count and blob 
 ### Invoke timer now (local)
 To run immediately without waiting for the schedule, call the local admin endpoint:
 ```bash
-curl -X POST http://localhost:7071/admin/functions/TimerPoller \
-  -H 'Content-Type: application/json' \
-  -d '{}'
+curl -X POST http://localhost:7071/admin/functions/TimerPoller -H 'Content-Type: application/json' -d '{}'
 ```
 
 ### Deploy (Functions Core Tools)

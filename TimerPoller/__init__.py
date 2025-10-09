@@ -48,9 +48,14 @@ def main(myTimer: func.TimerRequest) -> None:
 
     if collected:
         db_path, count = write_events(settings.sqlite_db_dir, collected)
-        blob_name = f"events/{os.path.basename(db_path)}"
-        upload_file(settings.azure_storage_connection_string, settings.azure_blob_container, db_path, blob_name)
-        logging.info("Uploaded %s events to blob %s", count, blob_name)
+        logging.info("Saved %s events to %s", count, db_path)
+
+        # Only upload to Azure Blob Storage if not in local environment
+        environment = os.getenv("ENVIRONMENT", "").lower()
+        if environment != "local":
+            blob_name = f"events/{os.path.basename(db_path)}"
+            upload_file(settings.azure_storage_connection_string, settings.azure_blob_container, db_path, blob_name)
+            logging.info("Uploaded %s events to blob %s", count, blob_name)
     else:
         logging.info("No new events.")
 
