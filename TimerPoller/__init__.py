@@ -27,7 +27,8 @@ def main(myTimer: func.TimerRequest) -> None:
         audience=settings.sf_audience,
         private_key_path=settings.sf_private_key_path,
     )
-    access_token, instance_url = get_access_token(settings.sf_login_url, assertion)
+    access_token, instance_url, tenant_id = get_access_token(settings.sf_login_url, assertion)
+    logging.info("Authenticated to Salesforce - Org ID: %s", tenant_id)
 
     cursor_store = CursorStore(settings.sqlite_db_dir)
 
@@ -48,7 +49,7 @@ def main(myTimer: func.TimerRequest) -> None:
             events = fetch_events_via_pubsub(
                 access_token=access_token,
                 instance_url=instance_url,
-                tenant_id=settings.sf_tenant_id,
+                tenant_id=tenant_id,
                 topic_name=topic,
                 replay_id=replay_id,
                 max_events=100,

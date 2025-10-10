@@ -20,7 +20,6 @@ class Settings:
     sf_audience: str
     sf_private_key_path: str
     sf_topic_names: List[str]
-    sf_tenant_id: str
 
     azure_storage_connection_string: str
     azure_blob_container: str
@@ -50,7 +49,6 @@ def get_settings() -> Settings:
         sf_audience=_env("SF_AUDIENCE", "https://login.salesforce.com"),
         sf_private_key_path=_env("SF_PRIVATE_KEY_PATH", "certs/private.key"),
         sf_topic_names=topic_names,
-        sf_tenant_id=_env("SF_TENANT_ID"),
         azure_storage_connection_string=_env("AZURE_STORAGE_CONNECTION_STRING"),
         azure_blob_container=_env("AZURE_BLOB_CONTAINER", "events"),
         sqlite_db_dir=_env("SQLITE_DB_DIR", "data"),
