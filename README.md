@@ -1,12 +1,12 @@
 ## Salesforce Pub/Sub Client (Azure Functions)
 
-Minimal timer-triggered Azure Function that authenticates to Salesforce via JWT, fetches recent events by CreatedDate, stores them in SQLite, and uploads the DB to Azure Blob Storage.
+Minimal timer-triggered Azure Function that authenticates to Salesforce via JWT, subscribes to platform events via gRPC Pub/Sub API, stores them in SQLite, and uploads the DB to Azure Blob Storage (or local filesystem in dev mode).
 
 ### Prerequisites
-- Python 3.10+
+- Python 3.9+
 - Azure Functions Core Tools v4 (`func`)
-- Azure CLI (`az`)
-- Optional: Azurite (or use `UseDevelopmentStorage=true` which is set in `local.settings.example.json`)
+- Azure CLI (`az`) - only for deployment
+- **No Azurite required** - local mode stores files directly to filesystem
 
 ### Setup (local)
 1) Create venv and install deps
@@ -76,13 +76,14 @@ func azure functionapp publish <appName> --python
 ```
 
 ### Minimal code reference
-- `src/functions/TimerPoller/__init__.py`: Orchestrates run (auth → fetch → write → upload → save cursor).
+- `TimerPoller/__init__.py`: Orchestrates run (auth → subscribe → write → upload → save cursor).
 - `src/app/config/settings.py`: Loads settings from env/local.settings.
-- `src/app/salesforce/auth.py`: JWT assertion and OAuth token exchange.
-- `src/app/salesforce/events.py`: Simple SOQL paging by CreatedDate.
-- `src/app/replay/cursor_store.py`: Per-topic ISO timestamp cursor in SQLite.
+- `src/app/salesforce/auth.py`: JWT assertion and OAuth token exchange (auto-extracts org ID).
+- `src/app/salesforce/pubsub_client.py`: gRPC Pub/Sub API client for subscribing to platform events.
+- `src/app/salesforce/proto/`: Generated protobuf files for Salesforce Pub/Sub API.
+- `src/app/replay/cursor_store.py`: Per-topic replay_id cursor in SQLite.
 - `src/app/storage/sqlite_writer.py`: Writes events to `events_YYYYMMDDTHHMMSSZ.db`.
-- `src/app/storage/azure_blob.py`: Uploads DB file to blob `events/`.
+- `src/app/storage/azure_blob.py`: Uploads DB file to blob `events/` (or local filesystem in dev).
 
 ### Environment keys
 - `SF_CLIENT_ID`, `SF_USERNAME`, `SF_LOGIN_URL`, `SF_AUDIENCE`, `SF_PRIVATE_KEY_PATH`, `SF_TOPIC_NAMES`
