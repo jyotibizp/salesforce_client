@@ -5,7 +5,7 @@ import azure.functions as func
 
 from src.app.config.settings import get_settings
 from src.app.salesforce.auth import create_jwt_assertion, get_access_token
-from src.app.salesforce.events import fetch_events, topic_to_sobject_name
+from src.app.salesforce.pubsub_client import fetch_events_via_pubsub
 from src.app.replay.cursor_store import CursorStore
 from src.app.storage.sqlite_writer import write_events
 from src.app.storage.azure_blob import upload_file
@@ -16,10 +16,11 @@ def main(myTimer: func.TimerRequest) -> None:
         logging.info("The timer is past due!")
 
     utc_timestamp = datetime.datetime.utcnow().replace(tzinfo=datetime.timezone.utc).isoformat()
-    logging.info("Salesforce poller function started at %s", utc_timestamp)
+    logging.info("Salesforce Pub/Sub poller function started at %s", utc_timestamp)
 
     settings = get_settings()
 
+    # Authenticate to Salesforce
     assertion = create_jwt_assertion(
         client_id=settings.sf_client_id,
         username=settings.sf_username,
@@ -31,20 +32,38 @@ def main(myTimer: func.TimerRequest) -> None:
     cursor_store = CursorStore(settings.sqlite_db_dir)
 
     collected = []
-    latest_per_topic: dict[str, str] = {}
+    latest_per_topic: dict[str, bytes] = {}
 
+    # Subscribe to each topic via Pub/Sub API
     for topic in settings.sf_topic_names:
-        sobject = topic_to_sobject_name(topic)
-        since_iso = cursor_store.get(topic)
-        records = fetch_events(instance_url, access_token, sobject, since_iso)
-        for rec in records:
-            created_at = rec["CreatedDate"]
-            collected.append({
-                "topic": topic,
-                "created_at": created_at,
-                "record": rec,
-            })
-            latest_per_topic[topic] = created_at
+        replay_id = cursor_store.get(topic)
+
+        if replay_id:
+            logging.info("Resuming subscription to %s from saved replay_id", topic)
+        else:
+            logging.info("Starting new subscription to %s from LATEST", topic)
+
+        try:
+            # Fetch events via Pub/Sub API
+            events = fetch_events_via_pubsub(
+                access_token=access_token,
+                instance_url=instance_url,
+                tenant_id=settings.sf_tenant_id,
+                topic_name=topic,
+                replay_id=replay_id,
+                max_events=100,
+            )
+
+            for event in events:
+                collected.append(event)
+                # Track latest replay_id for this topic
+                latest_per_topic[topic] = event["replay_id"]
+
+            logging.info("Fetched %d events from topic %s", len(events), topic)
+
+        except Exception as e:
+            logging.error("Error fetching events from topic %s: %s", topic, e)
+            continue
 
     if collected:
         db_path, count = write_events(settings.sqlite_db_dir, collected)
@@ -59,9 +78,11 @@ def main(myTimer: func.TimerRequest) -> None:
     else:
         logging.info("No new events.")
 
-    for topic, ts in latest_per_topic.items():
-        cursor_store.set(topic, ts)
+    # Update cursors with latest replay IDs
+    for topic, replay_id in latest_per_topic.items():
+        cursor_store.set(topic, replay_id)
+        logging.info("Updated replay_id for topic %s", topic)
 
-    logging.info("Salesforce poller function completed at %s", datetime.datetime.utcnow().isoformat())
+    logging.info("Salesforce Pub/Sub poller function completed at %s", datetime.datetime.utcnow().isoformat())
 
 
