@@ -1,0 +1,20 @@
+[2025-10-16T12:35:32.006Z] Executing 'Functions.TimerPoller' (Reason='This function was programmatically called via the host APIs.', Id=c7085371-b065-47ad-bdc1-6eb7ea233691)
+[2025-10-16T12:35:49.474Z] Salesforce Pub/Sub poller function started at 2025-10-16T12:35:49.434500+00:00
+[2025-10-16T12:35:51.278Z] Authenticated to Salesforce - Org ID: 00D3t000005us1xEAA
+[2025-10-16T12:35:51.637Z] Starting new subscription to /event/Event_Delete__e from LATEST
+[2025-10-16T12:35:51.649Z] Connected to Salesforce Pub/Sub API at api.pubsub.salesforce.com:7443
+[2025-10-16T12:35:53.414Z] Retrieved topic info for /event/Event_Delete__e: schema_id=ZakJ8AFcyQd6TLaz_GUXxw
+[2025-10-16T12:35:54.849Z] Retrieved schema for schema_id=ZakJ8AFcyQd6TLaz_GUXxw
+[2025-10-16T12:35:54.851Z] Subscribing to /event/Event_Delete__e from LATEST 
+[2025-10-16T12:35:55.228Z] gRPC error during subscription: <_MultiThreadedRendezvous of RPC that terminated with:
+        status = StatusCode.RESOURCE_EXHAUSTED
+        details = "The service received too many FetchRequests and doesn't have the resources to accept new requests. rpcId: 1fd8af51-a951-4d66-adbb-58dfe2a16ca7"
+        debug_error_string = "UNKNOWN:Error received from peer  {created_time:"2025-10-16T12:35:55.1691413+00:00", grpc_status:8, grpc_message:"The service received too many FetchRequests and doesn\'t have the resources to accept new requests. rpcId: 1fd8af51-a951-4d66-adbb-58dfe2a16ca7"}"
+>
+[2025-10-16T12:35:55.230Z] Closed Pub/Sub API connection
+[2025-10-16T12:35:55.231Z] Error fetching events from topic /event/Event_Delete__e: <_MultiThreadedRendezvous of RPC that terminated with:
+        status = StatusCode.RESOURCE_EXHAUSTED
+        details = "The service received too many FetchRequests and doesn't have the resources to accept new requests. rpcId: 1fd8af51-a951-4d66-adbb-58dfe2a16ca7"
+        debug_error_string = "UNKNOWN:Error received from peer  {created_time:"2025-10-16T12:35:55.1691413+00:00", grpc_status:8, grpc_message:"The service received too many FetchRequests and doesn\'t have the resources to accept new requests. rpcId: 1fd8af51-a951-4d66-adbb-58dfe2a16ca7"}"
+>
+[2025-10-16T12:35:55.232Z] No new events.
