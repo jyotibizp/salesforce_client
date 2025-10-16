@@ -9,6 +9,7 @@ from src.app.salesforce.pubsub_client import fetch_events_via_pubsub
 from src.app.replay.cursor_store import CursorStore
 from src.app.storage.sqlite_writer import write_events
 from src.app.storage.azure_blob import upload_file
+from src.app.mock_events import load_mock_events_for_topic
 
 
 def main(myTimer: func.TimerRequest) -> None:
@@ -20,40 +21,50 @@ def main(myTimer: func.TimerRequest) -> None:
 
     settings = get_settings()
 
-    # Authenticate to Salesforce
-    assertion = create_jwt_assertion(
-        client_id=settings.sf_client_id,
-        username=settings.sf_username,
-        audience=settings.sf_audience,
-        private_key_path=settings.sf_private_key_path,
-    )
-    access_token, instance_url, tenant_id = get_access_token(settings.sf_login_url, assertion)
-    logging.info("Authenticated to Salesforce - Org ID: %s", tenant_id)
+    # Check if running in mock mode
+    if settings.mock_mode:
+        logging.info("Running in MOCK MODE - using mock data from %s", settings.mock_data_dir)
+        access_token, instance_url, tenant_id = None, None, None
+    else:
+        # Authenticate to Salesforce
+        assertion = create_jwt_assertion(
+            client_id=settings.sf_client_id,
+            username=settings.sf_username,
+            audience=settings.sf_audience,
+            private_key_path=settings.sf_private_key_path,
+        )
+        access_token, instance_url, tenant_id = get_access_token(settings.sf_login_url, assertion)
+        logging.info("Authenticated to Salesforce - Org ID: %s", tenant_id)
 
     cursor_store = CursorStore(settings.sqlite_db_dir)
 
     collected = []
     latest_per_topic: dict[str, bytes] = {}
 
-    # Subscribe to each topic via Pub/Sub API
+    # Subscribe to each topic via Pub/Sub API or use mock data
     for topic in settings.sf_topic_names:
         replay_id = cursor_store.get(topic)
 
-        if replay_id:
-            logging.info("Resuming subscription to %s from saved replay_id", topic)
-        else:
-            logging.info("Starting new subscription to %s from LATEST", topic)
-
         try:
-            # Fetch events via Pub/Sub API
-            events = fetch_events_via_pubsub(
-                access_token=access_token,
-                instance_url=instance_url,
-                tenant_id=tenant_id,
-                topic_name=topic,
-                replay_id=replay_id,
-                max_events=100,
-            )
+            if settings.mock_mode:
+                # Load mock events from JSON files
+                logging.info("Loading mock events for %s", topic)
+                events = load_mock_events_for_topic(settings.mock_data_dir, topic)
+            else:
+                # Fetch events via Pub/Sub API
+                if replay_id:
+                    logging.info("Resuming subscription to %s from saved replay_id", topic)
+                else:
+                    logging.info("Starting new subscription to %s from LATEST", topic)
+                
+                events = fetch_events_via_pubsub(
+                    access_token=access_token,
+                    instance_url=instance_url,
+                    tenant_id=tenant_id,
+                    topic_name=topic,
+                    replay_id=replay_id,
+                    max_events=100,
+                )
 
             for event in events:
                 collected.append(event)

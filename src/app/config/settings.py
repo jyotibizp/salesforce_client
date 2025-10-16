@@ -25,6 +25,9 @@ class Settings:
     azure_blob_container: str
 
     sqlite_db_dir: str
+    
+    mock_mode: bool
+    mock_data_dir: str
 
 
 _settings: Settings | None = None
@@ -52,6 +55,8 @@ def get_settings() -> Settings:
         azure_storage_connection_string=_env("AZURE_STORAGE_CONNECTION_STRING"),
         azure_blob_container=_env("AZURE_BLOB_CONTAINER", "events"),
         sqlite_db_dir=_env("SQLITE_DB_DIR", "data"),
+        mock_mode=_env("MOCK_MODE", "false").lower() in ("true", "1", "yes"),
+        mock_data_dir=_env("MOCK_DATA_DIR", "mock_data"),
     )
 
     return _settings

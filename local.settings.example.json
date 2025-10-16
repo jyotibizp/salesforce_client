@@ -15,7 +15,11 @@
     "AZURE_STORAGE_CONNECTION_STRING": "<storage_connection_string>",
     "AZURE_BLOB_CONTAINER": "events",
 
-    "SQLITE_DB_DIR": "data"
+    "SQLITE_DB_DIR": "data",
+
+    "MOCK_MODE": "false",
+    "MOCK_DATA_DIR": "mock_data",
+    "ENVIRONMENT": "local"
   }
 }
 

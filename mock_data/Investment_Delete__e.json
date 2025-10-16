@@ -1,0 +1,33 @@
+[
+  {
+    "topic": "/event/Investment_Delete__e",
+    "replay_id": "AQEBCQ==",
+    "event_id": "mock-investment-001",
+    "schema_id": "mock-schema-investment",
+    "payload": {
+      "ObjectName": "Investment",
+      "RecordId": "a0I3t000000DEF001",
+      "DeletedBy": "0053t000000XYZ201",
+      "DeletedDate": "2025-10-16T09:05:20.000Z",
+      "OwnerId": "0053t000000XYZ201",
+      "InvestmentName": "Fund ABC Investment"
+    },
+    "latest_replay_id": "AQEBCQ=="
+  },
+  {
+    "topic": "/event/Investment_Delete__e",
+    "replay_id": "AQEBDQ==",
+    "event_id": "mock-investment-002",
+    "schema_id": "mock-schema-investment",
+    "payload": {
+      "ObjectName": "Investment",
+      "RecordId": "a0I3t000000DEF002",
+      "DeletedBy": "0053t000000XYZ202",
+      "DeletedDate": "2025-10-16T10:45:55.000Z",
+      "OwnerId": "0053t000000XYZ202",
+      "InvestmentName": "Fund XYZ Investment"
+    },
+    "latest_replay_id": "AQEBDQ=="
+  }
+]
+

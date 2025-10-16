@@ -1,0 +1,45 @@
+[
+  {
+    "topic": "/event/ActivityContent_Delete__e",
+    "replay_id": "AQEBAQ==",
+    "event_id": "mock-activitycontent-001",
+    "schema_id": "mock-schema-activitycontent",
+    "payload": {
+      "ObjectName": "ActivityContent",
+      "RecordId": "0XX3t000000ABC001",
+      "DeletedBy": "0053t000000XYZ101",
+      "DeletedDate": "2025-10-16T10:15:30.000Z",
+      "OwnerId": "0053t000000XYZ101"
+    },
+    "latest_replay_id": "AQEBAQ=="
+  },
+  {
+    "topic": "/event/ActivityContent_Delete__e",
+    "replay_id": "AQEBBA==",
+    "event_id": "mock-activitycontent-002",
+    "schema_id": "mock-schema-activitycontent",
+    "payload": {
+      "ObjectName": "ActivityContent",
+      "RecordId": "0XX3t000000ABC002",
+      "DeletedBy": "0053t000000XYZ102",
+      "DeletedDate": "2025-10-16T11:20:45.000Z",
+      "OwnerId": "0053t000000XYZ102"
+    },
+    "latest_replay_id": "AQEBBA=="
+  },
+  {
+    "topic": "/event/ActivityContent_Delete__e",
+    "replay_id": "AQEBBw==",
+    "event_id": "mock-activitycontent-003",
+    "schema_id": "mock-schema-activitycontent",
+    "payload": {
+      "ObjectName": "ActivityContent",
+      "RecordId": "0XX3t000000ABC003",
+      "DeletedBy": "0053t000000XYZ103",
+      "DeletedDate": "2025-10-16T12:30:15.000Z",
+      "OwnerId": "0053t000000XYZ103"
+    },
+    "latest_replay_id": "AQEBBw=="
+  }
+]
+
