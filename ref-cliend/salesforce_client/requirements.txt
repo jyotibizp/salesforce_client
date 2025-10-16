@@ -1,0 +1,9 @@
+grpcio
+grpcio-tools
+protobuf
+google-auth
+python-dotenv
+requests
+PyJWT
+cryptography
+fastavro==1.12.0
