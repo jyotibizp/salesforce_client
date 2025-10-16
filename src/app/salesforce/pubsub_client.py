@@ -107,12 +107,9 @@ class PubSubClient:
 
         metadata = self._get_metadata()
 
-        # Create bidirectional stream
+        # For batch mode, send single request and process response
         def request_generator():
             yield fetch_request
-            # Keep requesting more events (can be enhanced with flow control)
-            while True:
-                yield pb2.FetchRequest(num_requested=num_requested)
 
         try:
             response_stream = self.stub.Subscribe(request_generator(), metadata=metadata)
@@ -122,7 +119,8 @@ class PubSubClient:
 
                 if not fetch_response.events:
                     logging.info("Received keepalive with latest_replay_id")
-                    continue
+                    # No events, exit the stream
+                    break
 
                 logging.info("Received %d events", len(fetch_response.events))
 
@@ -143,6 +141,9 @@ class PubSubClient:
                         "payload": decoded_payload,
                         "latest_replay_id": latest_replay_id,
                     }
+                
+                # After processing one batch, break (batch mode)
+                break
 
         except grpc.RpcError as e:
             logging.error("gRPC error during subscription: %s", e)
