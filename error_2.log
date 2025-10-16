@@ -1,0 +1,118 @@
+func start
+local.settings.json found in root directory (C:\Users\pradeep.verma\OneDrive - BLUE OWL\bodev\salesforce_client).
+Resolving worker runtime to 'python'.
+Found Python version 3.11.0
+ (python).
+
+
+Azure Functions Core Tools
+Core Tools Version:       4.3.0+df07acf9d837d635d1efc2c973225f4f1c8a4333 (64-bit)
+Function Runtime Version: 4.1042.100.25374
+
+[2025-10-16T13:31:27.781Z] Worker process started and initialized.
+
+Functions:
+
+        TimerPoller: timerTrigger
+
+For detailed output, run func with --verbose flag.
+[2025-10-16T13:32:02.458Z] The listener for function 'Functions.TimerPoller' was unable to start.
+[2025-10-16T13:32:02.460Z] The listener for function 'Functions.TimerPoller' was unable to start. Azure.Core: Retry failed after 6 tries. Retry settings can be adjusted in ClientOptions.Retry or by configuring a custom retry policy in ClientOptions.RetryPolicy. (No connection could be made because the target machine actively refused it. (127.0.0.1:10000)) (No connection could be made because the target machine actively refused it. (127.0.0.1:10000)) (No connection could be made because the target machine actively refused it. (127.0.0.1:10000)) (No connection could be made because the target machine actively refused it. (127.0.0.1:10000)) (No connection could be made because the target machine actively refused it. (127.0.0.1:10000)) (No connection could be made because the target machine actively refused it. (127.0.0.1:10000)). Azure.Core: No connection could be made because the target machine actively refused it. (127.0.0.1:10000). System.Net.Http: No connection could be made because the target machine actively refused it. (127.0.0.1:10000). System.Net.Sockets: No connection could be made because the target machine actively refused it.
+[2025-10-16T13:32:03.172Z] Executing 'Functions.TimerPoller' (Reason='This function was programmatically called via the host APIs.', Id=c3810dde-c6c8-4efc-b164-b3b76b2dfce8)
+[2025-10-16T13:32:03.221Z] Salesforce Pub/Sub poller function started at 2025-10-16T13:32:03.211215+00:00
+[2025-10-16T13:32:04.580Z] Authenticated to Salesforce - Org ID: 00D3t000005us1xEAA
+[2025-10-16T13:32:04.588Z] Starting new subscription to /event/Account_Delete__e from LATEST
+[2025-10-16T13:32:04.602Z] Connected to Salesforce Pub/Sub API at api.pubsub.salesforce.com:7443
+[2025-10-16T13:32:42.877Z] The listener for function 'Functions.TimerPoller' was unable to start.
+[2025-10-16T13:32:42.878Z] The listener for function 'Functions.TimerPoller' was unable to start. Azure.Core: Retry failed after 6 tries. Retry settings can be adjusted in ClientOptions.Retry or by configuring a custom retry policy in ClientOptions.RetryPolicy. (No connection could be made because the target machine actively refused it. (127.0.0.1:10000)) (No connection could be made because the target machine actively refused it. (127.0.0.1:10000)) (No connection could be made because the target machine actively refused it. (127.0.0.1:10000)) (No connection could be made because the target machine actively refused it. (127.0.0.1:10000)) (No connection could be made because the target machine actively refused it. (127.0.0.1:10000)) (No connection could be made because the target machine actively refused it. (127.0.0.1:10000)). Azure.Core: No connection could be made because the target machine actively refused it. (127.0.0.1:10000). System.Net.Http: No connection could be made because the target machine actively refused it. (127.0.0.1:10000). System.Net.Sockets: No connection could be made because the target machine actively refused it.
+[2025-10-16T13:32:58.790Z] Retrieved topic info for /event/Account_Delete__e: schema_id=vEQOSfwVduZCT6X9tyDT5g
+[2025-10-16T13:33:25.391Z] The listener for function 'Functions.TimerPoller' was unable to start.
+[2025-10-16T13:33:25.393Z] The listener for function 'Functions.TimerPoller' was unable to start. Azure.Core: Retry failed after 6 tries. Retry settings can be adjusted in ClientOptions.Retry or by configuring a custom retry policy in ClientOptions.RetryPolicy. (No connection could be made because the target machine actively refused it. (127.0.0.1:10000)) (No connection could be made because the target machine actively refused it. (127.0.0.1:10000)) (No connection could be made because the target machine actively refused it. (127.0.0.1:10000)) (No connection could be made because the target machine actively refused it. (127.0.0.1:10000)) (No connection could be made because the target machine actively refused it. (127.0.0.1:10000)) (No connection could be made because the target machine actively refused it. (127.0.0.1:10000)). Azure.Core: No connection could be made because the target machine actively refused it. (127.0.0.1:10000). System.Net.Http: No connection could be made because the target machine actively refused it. (127.0.0.1:10000). System.Net.Sockets: No connection could be made because the target machine actively refused it.
+[2025-10-16T13:33:25.540Z] Retrieved schema for schema_id=vEQOSfwVduZCT6X9tyDT5g
+[2025-10-16T13:33:25.542Z] Subscribing to /event/Account_Delete__e from LATEST    
+[2025-10-16T13:33:26.108Z] Fetched 0 events from topic /event/Account_Delete__e
+[2025-10-16T13:33:26.110Z] Closed Pub/Sub API connection
+[2025-10-16T13:33:26.111Z] Fetched 0 events from topic /event/Account_Delete__e   
+[2025-10-16T13:33:26.113Z] Starting new subscription to /event/ActivityContent_Delete__e from LATEST
+[2025-10-16T13:33:26.114Z] Connected to Salesforce Pub/Sub API at api.pubsub.salesforce.com:7443
+[2025-10-16T13:34:09.767Z] The listener for function 'Functions.TimerPoller' was unable to start.
+[2025-10-16T13:34:09.768Z] The listener for function 'Functions.TimerPoller' was unable to start. Azure.Core: Retry failed after 6 tries. Retry settings can be adjusted in ClientOptions.Retry or by configuring a custom retry policy in ClientOptions.RetryPolicy. (No connection could be made because the target machine actively refused it. (127.0.0.1:10000)) (No connection could be made because the target machine actively refused it. (127.0.0.1:10000)) (No connection could be made because the target machine actively refused it. (127.0.0.1:10000)) (No connection could be made because the target machine actively refused it. (127.0.0.1:10000)) (No connection could be made because the target machine actively refused it. (127.0.0.1:10000)) (No connection could be made because the target machine actively refused it. (127.0.0.1:10000)). Azure.Core: No connection could be made because the target machine actively refused it. (127.0.0.1:10000). System.Net.Http: No connection could be made because the target machine actively refused it. (127.0.0.1:10000). System.Net.Sockets: No connection could be made because the target machine actively refused it.
+[2025-10-16T13:34:39.959Z] Closed Pub/Sub API connection
+[2025-10-16T13:34:39.961Z] Error fetching events from topic /event/ActivityContent_Delete__e: <_InactiveRpcError of RPC that terminated with:
+        status = StatusCode.PERMISSION_DENIED
+        details = "An error occurred while getting the metadata for org CORE/prod/00D3t000005us1xEAA and topic /event/ActivityContent_Delete__e. Ensure the credentials and topic name are correct. rpcId: 7d2c90ab-252d-4315-b055-b4462fcd958c"      
+        debug_error_string = "UNKNOWN:Error received from peer  {created_time:"2025-10-16T13:34:39.9074295+00:00", grpc_status:7, grpc_message:"An error occurred while getting the metadata for org CORE/prod/00D3t000005us1xEAA and topic /event/ActivityContent_Delete__e. Ensure the credentials and topic name are correct. rpcId: 7d2c90ab-252d-4315-b055-b4462fcd958c"}"
+>
+[2025-10-16T13:34:39.963Z] Starting new subscription to /event/Contact_Delete__e from LATEST
+[2025-10-16T13:34:39.964Z] Connected to Salesforce Pub/Sub API at api.pubsub.salesforce.com:7443
+[2025-10-16T13:34:52.969Z] The listener for function 'Functions.TimerPoller' was unable to start.
+[2025-10-16T13:34:52.970Z] The listener for function 'Functions.TimerPoller' was unable to start. Azure.Core: Retry failed after 6 tries. Retry settings can be adjusted in ClientOptions.Retry or by configuring a custom retry policy in ClientOptions.RetryPolicy. (No connection could be made because the target machine actively refused it. (127.0.0.1:10000)) (No connection could be made because the target machine actively refused it. (127.0.0.1:10000)) (No connection could be made because the target machine actively refused it. (127.0.0.1:10000)) (No connection could be made because the target machine actively refused it. (127.0.0.1:10000)) (No connection could be made because the target machine actively refused it. (127.0.0.1:10000)) (No connection could be made because the target machine actively refused it. (127.0.0.1:10000)). Azure.Core: No connection could be made because the target machine actively refused it. (127.0.0.1:10000). System.Net.Http: No connection could be made because the target machine actively refused it. (127.0.0.1:10000). System.Net.Sockets: No connection could be made because the target machine actively refused it.
+[2025-10-16T13:35:25.388Z] Retrieved topic info for /event/Contact_Delete__e: schema_id=MXWHgpzF_NjbjwbgY8fUCg
+[2025-10-16T13:35:44.018Z] Retrieved schema for schema_id=MXWHgpzF_NjbjwbgY8fUCg
+[2025-10-16T13:35:44.019Z] Subscribing to /event/Contact_Delete__e from LATEST    
+[2025-10-16T13:35:44.365Z] Fetched 0 events from topic /event/Contact_Delete__e
+[2025-10-16T13:35:44.367Z] Closed Pub/Sub API connection
+[2025-10-16T13:35:44.368Z] Fetched 0 events from topic /event/Contact_Delete__e   
+[2025-10-16T13:35:44.370Z] Starting new subscription to /event/Event_Delete__e from LATEST
+[2025-10-16T13:35:44.371Z] Connected to Salesforce Pub/Sub API at api.pubsub.salesforce.com:7443
+[2025-10-16T13:35:45.936Z] Retrieved topic info for /event/Event_Delete__e: schema_id=ZakJ8AFcyQd6TLaz_GUXxw
+[2025-10-16T13:35:47.496Z] The listener for function 'Functions.TimerPoller' was unable to start.
+[2025-10-16T13:35:47.497Z] The listener for function 'Functions.TimerPoller' was unable to start. Azure.Core: Retry failed after 6 tries. Retry settings can be adjusted in ClientOptions.Retry or by configuring a custom retry policy in ClientOptions.RetryPolicy. (No connection could be made because the target machine actively refused it. (127.0.0.1:10000)) (No connection could be made because the target machine actively refused it. (127.0.0.1:10000)) (No connection could be made because the target machine actively refused it. (127.0.0.1:10000)) (No connection could be made because the target machine actively refused it. (127.0.0.1:10000)) (No connection could be made because the target machine actively refused it. (127.0.0.1:10000)) (No connection could be made because the target machine actively refused it. (127.0.0.1:10000)). Azure.Core: No connection could be made because the target machine actively refused it. (127.0.0.1:10000). System.Net.Http: No connection could be made because the target machine actively refused it. (127.0.0.1:10000). System.Net.Sockets: No connection could be made because the target machine actively refused it.
+[2025-10-16T13:35:49.273Z] Retrieved schema for schema_id=ZakJ8AFcyQd6TLaz_GUXxw
+[2025-10-16T13:35:49.276Z] Subscribing to /event/Event_Delete__e from LATEST      
+[2025-10-16T13:35:49.632Z] Fetched 0 events from topic /event/Event_Delete__e
+[2025-10-16T13:35:49.633Z] Closed Pub/Sub API connection
+[2025-10-16T13:35:49.635Z] Fetched 0 events from topic /event/Event_Delete__e     
+[2025-10-16T13:35:49.636Z] Starting new subscription to /event/Fund_Delete__e from LATEST
+[2025-10-16T13:35:49.638Z] Connected to Salesforce Pub/Sub API at api.pubsub.salesforce.com:7443
+[2025-10-16T13:35:50.888Z] Retrieved topic info for /event/Fund_Delete__e: schema_id=EaYyWjay095xtt1zP8Fi2Q
+[2025-10-16T13:35:57.121Z] Retrieved schema for schema_id=EaYyWjay095xtt1zP8Fi2Q
+[2025-10-16T13:35:57.123Z] Subscribing to /event/Fund_Delete__e from LATEST       
+[2025-10-16T13:35:57.479Z] Fetched 0 events from topic /event/Fund_Delete__e
+[2025-10-16T13:35:57.480Z] Closed Pub/Sub API connection
+[2025-10-16T13:35:57.481Z] Fetched 0 events from topic /event/Fund_Delete__e      
+[2025-10-16T13:35:57.483Z] Starting new subscription to /event/Investment_Delete__e from LATEST
+[2025-10-16T13:35:57.484Z] Connected to Salesforce Pub/Sub API at api.pubsub.salesforce.com:7443
+[2025-10-16T13:35:59.635Z] Closed Pub/Sub API connection
+[2025-10-16T13:35:59.636Z] Error fetching events from topic /event/Investment_Delete__e: <_InactiveRpcError of RPC that terminated with:
+        status = StatusCode.PERMISSION_DENIED
+        details = "An error occurred while getting the metadata for org CORE/prod/00D3t000005us1xEAA and topic /event/Investment_Delete__e. Ensure the credentials and topic name are correct. rpcId: a8c20784-2e50-4b05-a256-5b792d669c11"
+        debug_error_string = "UNKNOWN:Error received from peer  {created_time:"2025-10-16T13:35:59.5877924+00:00", grpc_status:7, grpc_message:"An error occurred while getting the metadata for org CORE/prod/00D3t000005us1xEAA and topic /event/Investment_Delete__e. Ensure the credentials and topic name are correct. rpcId: a8c20784-2e50-4b05-a256-5b792d669c11"}"
+>
+[2025-10-16T13:35:59.640Z] Starting new subscription to /event/LegalEntity_Delete__e from LATEST
+[2025-10-16T13:35:59.642Z] Connected to Salesforce Pub/Sub API at api.pubsub.salesforce.com:7443
+[2025-10-16T13:36:32.424Z] Closed Pub/Sub API connection
+[2025-10-16T13:36:32.425Z] Error fetching events from topic /event/LegalEntity_Delete__e: <_InactiveRpcError of RPC that terminated with:
+        status = StatusCode.PERMISSION_DENIED
+        details = "An error occurred while getting the metadata for org CORE/prod/00D3t000005us1xEAA and topic /event/LegalEntity_Delete__e. Ensure the credentials and topic name are correct. rpcId: 1484cc70-9c5f-4131-8e4e-7b37e8ccf97b"
+        debug_error_string = "UNKNOWN:Error received from peer  {created_time:"2025-10-16T13:36:32.377082+00:00", grpc_status:7, grpc_message:"An error occurred while getting the metadata for org CORE/prod/00D3t000005us1xEAA and topic /event/LegalEntity_Delete__e. Ensure the credentials and topic name are correct. rpcId: 1484cc70-9c5f-4131-8e4e-7b37e8ccf97b"}"
+>
+[2025-10-16T13:36:32.427Z] Starting new subscription to /event/LP_Consultant_Relationship_Delete__e from LATEST
+[2025-10-16T13:36:32.428Z] Connected to Salesforce Pub/Sub API at api.pubsub.salesforce.com:7443
+[2025-10-16T13:36:34.090Z] Retrieved topic info for /event/LP_Consultant_Relationship_Delete__e: schema_id=1C9cw85mg9SU6cgh7qgu_w
+[2025-10-16T13:36:41.617Z] Retrieved schema for schema_id=1C9cw85mg9SU6cgh7qgu_w
+[2025-10-16T13:36:41.619Z] Subscribing to /event/LP_Consultant_Relationship_Delete__e from LATEST
+[2025-10-16T13:36:42.026Z] Fetched 0 events from topic /event/LP_Consultant_Relationship_Delete__e
+[2025-10-16T13:36:42.028Z] Closed Pub/Sub API connection
+[2025-10-16T13:36:42.029Z] Fetched 0 events from topic /event/LP_Consultant_Relationship_Delete__e
+[2025-10-16T13:36:42.030Z] Starting new subscription to /event/Opportunity_Delete__e from LATEST
+[2025-10-16T13:36:42.032Z] Connected to Salesforce Pub/Sub API at api.pubsub.salesforce.com:7443
+[2025-10-16T13:36:43.470Z] Retrieved topic info for /event/Opportunity_Delete__e: schema_id=7oE6I0m-ZVUzfzMGEstCRA
+[2025-10-16T13:36:46.653Z] Retrieved schema for schema_id=7oE6I0m-ZVUzfzMGEstCRA
+[2025-10-16T13:36:46.655Z] Subscribing to /event/Opportunity_Delete__e from LATEST
+[2025-10-16T13:36:46.991Z] Fetched 0 events from topic /event/Opportunity_Delete__e
+[2025-10-16T13:36:46.993Z] Closed Pub/Sub API connection
+[2025-10-16T13:36:46.994Z] Fetched 0 events from topic /event/Opportunity_Delete__e
+[2025-10-16T13:36:46.996Z] Starting new subscription to /event/Task_Delete__e from LATEST
+[2025-10-16T13:36:46.998Z] Connected to Salesforce Pub/Sub API at api.pubsub.salesforce.com:7443
+[2025-10-16T13:36:56.185Z] The listener for function 'Functions.TimerPoller' was unable to start.
+[2025-10-16T13:36:56.187Z] The listener for function 'Functions.TimerPoller' was unable to start. Azure.Core: Retry failed after 6 tries. Retry settings can be adjusted in ClientOptions.Retry or by configuring a custom retry policy in ClientOptions.RetryPolicy. (No connection could be made because the target machine actively refused it. (127.0.0.1:10000)) (No connection could be made because the target machine actively refused it. (127.0.0.1:10000)) (No connection could be made because the target machine actively refused it. (127.0.0.1:10000)) (No connection could be made because the target machine actively refused it. (127.0.0.1:10000)) (No connection could be made because the target machine actively refused it. (127.0.0.1:10000)) (No connection could be made because the target machine actively refused it. (127.0.0.1:10000)). Azure.Core: No connection could be made because the target machine actively refused it. (127.0.0.1:10000). System.Net.Http: No connection could be made because the target machine actively refused it. (127.0.0.1:10000). System.Net.Sockets: No connection could be made because the target machine actively refused it.
+[2025-10-16T13:37:08.014Z] Retrieved topic info for /event/Task_Delete__e: schema_id=z9COVj5aaSSHgVbCj62Qhg
+[2025-10-16T13:37:08.692Z] Retrieved schema for schema_id=z9COVj5aaSSHgVbCj62Qhg
+[2025-10-16T13:37:08.694Z] Subscribing to /event/Task_Delete__e from LATEST       
+[2025-10-16T13:37:09.401Z] Fetched 0 events from topic /event/Task_Delete__e
+[2025-10-16T13:37:09.403Z] Closed Pub/Sub API connection
+[2025-10-16T13:37:09.404Z] Fetched 0 events from topic /event/Task_Delete__e      
+[2025-10-16T13:37:09.405Z] No new events.
+[2025-10-16T13:37:09.406Z] Salesforce Pub/Sub poller function completed at 2025-10-16T13:37:09.400528
+[2025-10-16T13:37:09.425Z] Executed 'Functions.TimerPoller' (Succeeded, Id=c3810dde-c6c8-4efc-b164-b3b76b2dfce8, Duration=306274ms)
