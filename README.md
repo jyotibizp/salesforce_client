@@ -1,6 +1,6 @@
 ## Salesforce Pub/Sub Client (Azure Functions)
 
-Minimal timer-triggered Azure Function that authenticates to Salesforce via JWT, subscribes to platform events via gRPC Pub/Sub API, stores them in SQLite, and uploads the DB to Azure Blob Storage (or local filesystem in dev mode).
+Azure Function that authenticates to Salesforce via JWT, subscribes to platform events via gRPC Pub/Sub API, stores them in SQLite, and uploads the DB to Azure Blob Storage (or local filesystem in dev mode).
 
 ### Prerequisites
 - Python 3.9+
@@ -75,7 +75,7 @@ az functionapp config appsettings set -g <rg> -n <appName> --settings \
 func azure functionapp publish <appName> --python
 ```
 
-### Minimal code reference
+### Code reference
 - `TimerPoller/__init__.py`: Orchestrates run (auth → subscribe → write → upload → save cursor).
 - `src/app/config/settings.py`: Loads settings from env/local.settings.
 - `src/app/salesforce/auth.py`: JWT assertion and OAuth token exchange (auto-extracts org ID).
@@ -88,4 +88,4 @@ func azure functionapp publish <appName> --python
 ### Environment keys
 - `SF_CLIENT_ID`, `SF_USERNAME`, `SF_LOGIN_URL`, `SF_AUDIENCE`, `SF_PRIVATE_KEY_PATH`, `SF_TOPIC_NAMES`
 - `AZURE_STORAGE_CONNECTION_STRING`, `AZURE_BLOB_CONTAINER`
-- `SQLITE_DB_DIR`
+- `SQLITE_DB_DIR`, `ENVIRONMENT`, `MOCK_MODE`, `MOCK_DATA_DIR`
