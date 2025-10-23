@@ -142,9 +142,16 @@ class PubSubClient:
 
         metadata = self._get_metadata()
 
-        # For batch mode, send single request and process response
+        # For batch mode, send single request but keep generator alive
+        # The generator must stay alive for bidirectional gRPC streaming
+        import threading
+        stop_flag = threading.Event()
+        
         def request_generator():
             yield fetch_request
+            # Keep generator alive until we signal it to stop
+            # This is required for gRPC bidirectional streaming
+            stop_flag.wait()
 
         try:
             logging.info("Starting Subscribe RPC call for %s...", topic_name)
@@ -175,6 +182,7 @@ class PubSubClient:
                 if not events_attr:
                     logging.warning("No events in this batch - empty response or keepalive. Breaking.")
                     # No events, exit the stream
+                    stop_flag.set()  # Signal generator to stop
                     break
 
                 logging.info("Received batch of %d event(s) from %s", len(fetch_response.events), topic_name)
@@ -218,7 +226,11 @@ class PubSubClient:
                 # After processing one batch, break (batch mode)
                 break
 
+            # Signal generator to stop
+            stop_flag.set()
+
         except grpc.RpcError as e:
+            stop_flag.set()  # Signal generator to stop on error
             logging.error("gRPC error during subscription: %s - %s", e.code(), e.details())
             # Log trailing metadata for debugging (same as continuous mode)
             tr = list(e.trailing_metadata() or [])
