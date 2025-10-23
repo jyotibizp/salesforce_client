@@ -1,0 +1,632 @@
+func start
+local.settings.json found in root directory (C:\Users\pradeep.verma\OneDrive - BLUE OWL\bodev\delete_synchronizer\salesforce_client).
+Resolving worker runtime to 'python'.
+Found Python version 3.11.0 (python).
+
+
+Azure Functions Core Tools
+Core Tools Version:       4.3.0+df07acf9d837d635d1efc2c973225f4f1c8a4333 (64-bit)
+Function Runtime Version: 4.1042.100.25374
+
+[2025-10-23T12:36:34.750Z] Worker process started and initialized.
+
+Functions:
+
+        TimerPoller: timerTrigger
+
+For detailed output, run func with --verbose flag.
+[2025-10-23T12:36:36.057Z] The listener for function 'Functions.TimerPoller' was unable to start.
+[2025-10-23T12:36:36.058Z] The listener for function 'Functions.TimerPoller' was unable to start. Azure.Storage.Blobs: Service request failed.
+[2025-10-23T12:36:36.059Z] Status: 403 (This request is not authorized to perform this operation.)
+[2025-10-23T12:36:36.060Z] ErrorCode: AuthorizationFailure
+[2025-10-23T12:36:36.062Z]
+[2025-10-23T12:36:36.062Z] Headers:
+[2025-10-23T12:36:36.064Z] Transfer-Encoding: chunked
+[2025-10-23T12:36:36.065Z] Server: Microsoft-HTTPAPI/2.0
+[2025-10-23T12:36:36.066Z] x-ms-request-id: d0b79a5e-901e-0071-1819-443853000000
+[2025-10-23T12:36:36.067Z] x-ms-client-request-id: 23deb363-c917-404b-8f39-302c07b60eb4
+[2025-10-23T12:36:36.069Z] x-ms-error-code: AuthorizationFailure
+[2025-10-23T12:36:36.071Z] Date: Thu, 23 Oct 2025 12:36:35 GMT
+[2025-10-23T12:36:36.072Z] .
+[2025-10-23T12:36:38.314Z] The listener for function 'Functions.TimerPoller' was unable to start.
+[2025-10-23T12:36:38.315Z] The listener for function 'Functions.TimerPoller' was unable to start. Azure.Storage.Blobs: Service request failed.
+[2025-10-23T12:36:38.317Z] Status: 403 (This request is not authorized to perform this operation.)
+[2025-10-23T12:36:38.318Z] ErrorCode: AuthorizationFailure
+[2025-10-23T12:36:38.319Z]
+[2025-10-23T12:36:38.320Z] Headers:
+[2025-10-23T12:36:38.321Z] Transfer-Encoding: chunked
+[2025-10-23T12:36:38.323Z] Server: Microsoft-HTTPAPI/2.0
+[2025-10-23T12:36:38.324Z] x-ms-request-id: d0b7a778-901e-0071-3719-443853000000
+[2025-10-23T12:36:38.325Z] x-ms-client-request-id: 500157f6-d3db-4fc5-b78e-4a84f868399a
+[2025-10-23T12:36:38.327Z] x-ms-error-code: AuthorizationFailure
+[2025-10-23T12:36:38.328Z] Date: Thu, 23 Oct 2025 12:36:37 GMT
+[2025-10-23T12:36:38.329Z] .
+[2025-10-23T12:36:42.480Z] The listener for function 'Functions.TimerPoller' was unable to start.
+[2025-10-23T12:36:42.481Z] The listener for function 'Functions.TimerPoller' was unable to start. Azure.Storage.Blobs: Service request failed.
+[2025-10-23T12:36:42.482Z] Status: 403 (This request is not authorized to perform this operation.)
+[2025-10-23T12:36:42.483Z] ErrorCode: AuthorizationFailure
+[2025-10-23T12:36:42.485Z]
+[2025-10-23T12:36:42.485Z] Headers:
+[2025-10-23T12:36:42.487Z] Transfer-Encoding: chunked
+[2025-10-23T12:36:42.488Z] Server: Microsoft-HTTPAPI/2.0
+[2025-10-23T12:36:42.490Z] x-ms-request-id: d0b7c0c2-901e-0071-1b19-443853000000
+[2025-10-23T12:36:42.491Z] x-ms-client-request-id: 5ef6c54d-4b8c-4e1b-aef0-245eb77ae82e
+[2025-10-23T12:36:42.492Z] x-ms-error-code: AuthorizationFailure
+[2025-10-23T12:36:42.493Z] Date: Thu, 23 Oct 2025 12:36:41 GMT
+[2025-10-23T12:36:42.494Z] .
+[2025-10-23T12:36:45.302Z] Executing 'Functions.TimerPoller' (Reason='This function was programmatically called via the host APIs.', Id=f0711ede-14a0-4824-a596-35e60fc13b9a)
+[2025-10-23T12:36:45.352Z] Salesforce Pub/Sub poller function started at 2025-10-23T12:36:45.343405+00:00
+[2025-10-23T12:36:46.387Z] Authenticated to Salesforce - Org ID: 00D3t000005us1xEAA
+[2025-10-23T12:36:46.390Z] No replay_id found for topic /event/Account_Delete__e - will fetch from EARLIEST
+[2025-10-23T12:36:46.392Z] Starting new subscription to /event/Account_Delete__e (no replay_id, will use EARLIEST)  
+[2025-10-23T12:36:46.393Z] ================================================================================
+[2025-10-23T12:36:46.395Z] CALLING fetch_events_via_pubsub for topic: /event/Account_Delete__e
+[2025-10-23T12:36:46.396Z]   - access_token: Present (112 chars)
+[2025-10-23T12:36:46.399Z]   - instance_url: https://blueowlcrm.my.salesforce.com
+[2025-10-23T12:36:46.403Z]   - tenant_id: 00D3t000005us1xEAA
+[2025-10-23T12:36:46.405Z]   - replay_id: None
+[2025-10-23T12:36:46.407Z]   - max_events: 100
+[2025-10-23T12:36:46.408Z] ================================================================================
+[2025-10-23T12:36:46.410Z] Connecting to Pub/Sub API at api.pubsub.salesforce.com:7443
+[2025-10-23T12:36:46.411Z] Using tenant_id: 00D3t000005us1xEAA
+[2025-10-23T12:36:46.412Z] Using instance_url: https://blueowlcrm.my.salesforce.com
+[2025-10-23T12:36:46.413Z] Access token length: 112 chars
+[2025-10-23T12:36:46.415Z] ✓ Connected to Salesforce Pub/Sub API at api.pubsub.salesforce.com:7443
+[2025-10-23T12:36:47.934Z] Retrieved topic info for /event/Account_Delete__e: schema_id=vEQOSfwVduZCT6X9tyDT5g
+[2025-10-23T12:36:48.796Z] Avro schema GET https://blueowlcrm.my.salesforce.com/services/data/v64.0/event/eventSchema/vEQOSfwVduZCT6X9tyDT5g?payloadFormat=COMPACT -> 200
+[2025-10-23T12:36:48.798Z] Retrieved schema for schema_id=vEQOSfwVduZCT6X9tyDT5g via REST
+[2025-10-23T12:36:48.799Z] Using schema for decoding: vEQOSfwVduZCT6X9tyDT5g
+[2025-10-23T12:36:48.800Z] Subscribing to /event/Account_Delete__e from EARLIEST (first run)
+[2025-10-23T12:36:48.802Z] Starting Subscribe RPC call for /event/Account_Delete__e...
+[2025-10-23T12:36:48.803Z] Subscribe RPC call established, waiting for response...
+[2025-10-23T12:36:49.354Z] The listener for function 'Functions.TimerPoller' was unable to start.
+[2025-10-23T12:36:49.355Z] The listener for function 'Functions.TimerPoller' was unable to start. Azure.Storage.Blobs: Service request failed.
+[2025-10-23T12:36:49.356Z] Status: 403 (This request is not authorized to perform this operation.)
+[2025-10-23T12:36:49.358Z] ErrorCode: AuthorizationFailure
+[2025-10-23T12:36:49.359Z]
+[2025-10-23T12:36:49.360Z] Headers:
+[2025-10-23T12:36:49.361Z] Transfer-Encoding: chunked
+[2025-10-23T12:36:49.362Z] Server: Microsoft-HTTPAPI/2.0
+[2025-10-23T12:36:49.363Z] x-ms-request-id: d0b7eb43-901e-0071-6d19-443853000000
+[2025-10-23T12:36:49.365Z] x-ms-client-request-id: ae7f8628-b2f7-4cad-8f38-241b8fd2bc5d
+[2025-10-23T12:36:49.366Z] x-ms-error-code: AuthorizationFailure
+[2025-10-23T12:36:49.367Z] Date: Thu, 23 Oct 2025 12:36:48 GMT
+[2025-10-23T12:36:49.370Z] .
+[2025-10-23T12:36:51.336Z] Received fetch_response #1 from stream
+[2025-10-23T12:36:51.338Z] latest_replay_id: 64530350080 (length: 10 bytes)
+[2025-10-23T12:36:51.340Z] pending_num_requested: 99
+[2025-10-23T12:36:51.341Z] events attribute: Present (type: RepeatedCompositeContainer)
+[2025-10-23T12:36:51.342Z] events list length: 1
+[2025-10-23T12:36:51.344Z] Received batch of 1 event(s) from /event/Account_Delete__e
+[2025-10-23T12:36:51.345Z] Processing event: schema_id=vEQOSfwVduZCT6X9tyDT5g event_id=28ed351a-99c7-463f-8786-f36b213ae942 replay_id=64530350080 payload_len=142
+[2025-10-23T12:36:51.347Z] Fetched 1 events from topic /event/Account_Delete__e
+[2025-10-23T12:36:51.372Z] Closed Pub/Sub API connection
+[2025-10-23T12:36:51.375Z] ================================================================================
+[2025-10-23T12:36:51.377Z] RETURNED from fetch_events_via_pubsub
+[2025-10-23T12:36:51.379Z]   - events type: list
+[2025-10-23T12:36:51.381Z]   - events count: 1
+[2025-10-23T12:36:51.383Z]   - first event keys: ['topic', 'replay_id', 'event_id', 'schema_id', 'payload', 'latest_replay_id']
+[2025-10-23T12:36:51.384Z] ================================================================================
+[2025-10-23T12:36:51.386Z] Fetched 1 events from topic /event/Account_Delete__e
+[2025-10-23T12:36:51.387Z] No replay_id found for topic /event/Activity_Content_Delete__e - will fetch from EARLIEST
+[2025-10-23T12:36:51.388Z] Starting new subscription to /event/Activity_Content_Delete__e (no replay_id, will use EARLIEST)
+[2025-10-23T12:36:51.390Z] ================================================================================
+[2025-10-23T12:36:51.391Z] CALLING fetch_events_via_pubsub for topic: /event/Activity_Content_Delete__e
+[2025-10-23T12:36:51.392Z]   - access_token: Present (112 chars)
+[2025-10-23T12:36:51.393Z]   - instance_url: https://blueowlcrm.my.salesforce.com
+[2025-10-23T12:36:51.395Z]   - tenant_id: 00D3t000005us1xEAA
+[2025-10-23T12:36:51.396Z]   - replay_id: None
+[2025-10-23T12:36:51.398Z]   - max_events: 100
+[2025-10-23T12:36:51.400Z] ================================================================================
+[2025-10-23T12:36:51.402Z] Connecting to Pub/Sub API at api.pubsub.salesforce.com:7443
+[2025-10-23T12:36:51.404Z] Using tenant_id: 00D3t000005us1xEAA
+[2025-10-23T12:36:51.406Z] Using instance_url: https://blueowlcrm.my.salesforce.com
+[2025-10-23T12:36:51.408Z] Access token length: 112 chars
+[2025-10-23T12:36:51.410Z] ✓ Connected to Salesforce Pub/Sub API at api.pubsub.salesforce.com:7443
+[2025-10-23T12:36:52.486Z] Retrieved topic info for /event/Activity_Content_Delete__e: schema_id=IrC81ehT2VlakxuZYSaecQ
+[2025-10-23T12:36:53.459Z] Avro schema GET https://blueowlcrm.my.salesforce.com/services/data/v64.0/event/eventSchema/IrC81ehT2VlakxuZYSaecQ?payloadFormat=COMPACT -> 200
+[2025-10-23T12:36:53.461Z] Retrieved schema for schema_id=IrC81ehT2VlakxuZYSaecQ via REST
+[2025-10-23T12:36:53.463Z] Using schema for decoding: IrC81ehT2VlakxuZYSaecQ
+[2025-10-23T12:36:53.464Z] Subscribing to /event/Activity_Content_Delete__e from EARLIEST (first run)
+[2025-10-23T12:36:53.465Z] Starting Subscribe RPC call for /event/Activity_Content_Delete__e...
+[2025-10-23T12:36:53.466Z] Subscribe RPC call established, waiting for response...
+[2025-10-23T12:36:55.612Z] Received fetch_response #1 from stream
+[2025-10-23T12:36:55.614Z] latest_replay_id: 64295665664 (length: 10 bytes)
+[2025-10-23T12:36:55.615Z] pending_num_requested: 85
+[2025-10-23T12:36:55.617Z] events attribute: Present (type: RepeatedCompositeContainer)
+[2025-10-23T12:36:55.618Z] events list length: 15
+[2025-10-23T12:36:55.620Z] Received batch of 15 event(s) from /event/Activity_Content_Delete__e
+[2025-10-23T12:36:55.621Z] Processing event: schema_id=IrC81ehT2VlakxuZYSaecQ event_id=be98851c-86d8-4a91-bf96-795f8b073865 replay_id=64235175936 payload_len=7882
+[2025-10-23T12:36:55.625Z] Processing event: schema_id=IrC81ehT2VlakxuZYSaecQ event_id=bc5e49cf-f416-4cff-ab01-a365fea11748 replay_id=64235307008 payload_len=9107
+[2025-10-23T12:36:55.633Z] Processing event: schema_id=IrC81ehT2VlakxuZYSaecQ event_id=18d19aa9-3f6e-4973-9171-a8005749e825 replay_id=64235569152 payload_len=774
+[2025-10-23T12:36:55.635Z] Processing event: schema_id=IrC81ehT2VlakxuZYSaecQ event_id=f5716647-8210-46ff-bad7-2f95656aa31e replay_id=64285769728 payload_len=4667
+[2025-10-23T12:36:55.663Z] Processing event: schema_id=IrC81ehT2VlakxuZYSaecQ event_id=f7726f93-1347-4727-a188-696275a11530 replay_id=64286031872 payload_len=2028
+[2025-10-23T12:36:55.665Z] Processing event: schema_id=IrC81ehT2VlakxuZYSaecQ event_id=2fe4e297-190a-48a6-8952-51245095ae64 replay_id=64286294016 payload_len=3442
+[2025-10-23T12:36:55.666Z] Processing event: schema_id=IrC81ehT2VlakxuZYSaecQ event_id=deca076c-64e9-4007-a7bc-8e8e5bd2e0a4 replay_id=64286687232 payload_len=7734
+[2025-10-23T12:36:55.667Z] Processing event: schema_id=IrC81ehT2VlakxuZYSaecQ event_id=8e3026b5-21e3-46a7-af48-a8f38546286a replay_id=64286883840 payload_len=8181
+[2025-10-23T12:36:55.668Z] Processing event: schema_id=IrC81ehT2VlakxuZYSaecQ event_id=0a0bb0f5-bcbc-42a6-a996-d84fb70e6dfa replay_id=64287277056 payload_len=24167
+[2025-10-23T12:36:55.669Z] Processing event: schema_id=IrC81ehT2VlakxuZYSaecQ event_id=923f93ad-dcdc-471f-96eb-c8a4240bb1c7 replay_id=64289439744 payload_len=2171
+[2025-10-23T12:36:55.671Z] Processing event: schema_id=IrC81ehT2VlakxuZYSaecQ event_id=08ec0fe4-41a6-406c-b979-3291cc06b1fd replay_id=64289701888 payload_len=4475
+[2025-10-23T12:36:55.672Z] Processing event: schema_id=IrC81ehT2VlakxuZYSaecQ event_id=9a4f5664-e1e6-409c-87a9-5b346ea051bb replay_id=64289898496 payload_len=1572
+[2025-10-23T12:36:55.673Z] Processing event: schema_id=IrC81ehT2VlakxuZYSaecQ event_id=40fb2645-66b6-467f-a0f0-d18f1a98f0c7 replay_id=64290095104 payload_len=3381
+[2025-10-23T12:36:55.674Z] Processing event: schema_id=IrC81ehT2VlakxuZYSaecQ event_id=d38b2498-e8d4-4d3a-a898-8858e6f6e974 replay_id=64290226176 payload_len=13800
+[2025-10-23T12:36:55.675Z] Processing event: schema_id=IrC81ehT2VlakxuZYSaecQ event_id=6830b6d0-2cc6-45e7-aad1-00000fe3b35d replay_id=64295665664 payload_len=1327
+[2025-10-23T12:36:55.677Z] Fetched 15 events from topic /event/Activity_Content_Delete__e
+[2025-10-23T12:36:55.679Z] Closed Pub/Sub API connection
+[2025-10-23T12:36:55.681Z] ================================================================================
+[2025-10-23T12:36:55.683Z] RETURNED from fetch_events_via_pubsub
+[2025-10-23T12:36:55.685Z]   - events type: list
+[2025-10-23T12:36:55.686Z]   - events count: 15
+[2025-10-23T12:36:55.688Z]   - first event keys: ['topic', 'replay_id', 'event_id', 'schema_id', 'payload', 'latest_replay_id']
+[2025-10-23T12:36:55.690Z] ================================================================================
+[2025-10-23T12:36:55.691Z] Fetched 15 events from topic /event/Activity_Content_Delete__e
+[2025-10-23T12:36:55.693Z] No replay_id found for topic /event/Contact_Delete__e - will fetch from EARLIEST
+[2025-10-23T12:36:55.694Z] Starting new subscription to /event/Contact_Delete__e (no replay_id, will use EARLIEST)  
+[2025-10-23T12:36:55.696Z] ================================================================================
+[2025-10-23T12:36:55.697Z] CALLING fetch_events_via_pubsub for topic: /event/Contact_Delete__e
+[2025-10-23T12:36:55.698Z]   - access_token: Present (112 chars)
+[2025-10-23T12:36:55.699Z]   - instance_url: https://blueowlcrm.my.salesforce.com
+[2025-10-23T12:36:55.700Z]   - tenant_id: 00D3t000005us1xEAA
+[2025-10-23T12:36:55.702Z]   - replay_id: None
+[2025-10-23T12:36:55.703Z]   - max_events: 100
+[2025-10-23T12:36:55.704Z] ================================================================================
+[2025-10-23T12:36:55.705Z] Connecting to Pub/Sub API at api.pubsub.salesforce.com:7443
+[2025-10-23T12:36:55.706Z] Using tenant_id: 00D3t000005us1xEAA
+[2025-10-23T12:36:55.708Z] Using instance_url: https://blueowlcrm.my.salesforce.com
+[2025-10-23T12:36:55.710Z] Access token length: 112 chars
+[2025-10-23T12:36:55.712Z] ✓ Connected to Salesforce Pub/Sub API at api.pubsub.salesforce.com:7443
+[2025-10-23T12:36:56.781Z] Retrieved topic info for /event/Contact_Delete__e: schema_id=MXWHgpzF_NjbjwbgY8fUCg
+[2025-10-23T12:36:57.761Z] Avro schema GET https://blueowlcrm.my.salesforce.com/services/data/v64.0/event/eventSchema/MXWHgpzF_NjbjwbgY8fUCg?payloadFormat=COMPACT -> 200
+[2025-10-23T12:36:57.763Z] Retrieved schema for schema_id=MXWHgpzF_NjbjwbgY8fUCg via REST
+[2025-10-23T12:36:57.764Z] Using schema for decoding: MXWHgpzF_NjbjwbgY8fUCg
+[2025-10-23T12:36:57.765Z] Subscribing to /event/Contact_Delete__e from EARLIEST (first run)
+[2025-10-23T12:36:57.766Z] Starting Subscribe RPC call for /event/Contact_Delete__e...
+[2025-10-23T12:36:57.767Z] Subscribe RPC call established, waiting for response...
+[2025-10-23T12:36:59.597Z] Received fetch_response #1 from stream
+[2025-10-23T12:36:59.599Z] latest_replay_id: 64305823744 (length: 10 bytes)
+[2025-10-23T12:36:59.601Z] pending_num_requested: 62
+[2025-10-23T12:36:59.603Z] events attribute: Present (type: RepeatedCompositeContainer)
+[2025-10-23T12:36:59.604Z] events list length: 38
+[2025-10-23T12:36:59.606Z] Received batch of 38 event(s) from /event/Contact_Delete__e
+[2025-10-23T12:36:59.608Z] Processing event: schema_id=MXWHgpzF_NjbjwbgY8fUCg event_id=da9d1fac-fc84-498f-8700-8c256403ddbc replay_id=64286621696 payload_len=116
+[2025-10-23T12:36:59.611Z] Processing event: schema_id=MXWHgpzF_NjbjwbgY8fUCg event_id=799bc236-c362-485b-8b43-6f6b4b993144 replay_id=64297238528 payload_len=118
+[2025-10-23T12:36:59.615Z] Processing event: schema_id=MXWHgpzF_NjbjwbgY8fUCg event_id=435b2029-46f7-4c22-b177-1164deff82b2 replay_id=64297304064 payload_len=126
+[2025-10-23T12:36:59.619Z] Processing event: schema_id=MXWHgpzF_NjbjwbgY8fUCg event_id=311a3146-83b1-4074-a258-1ecf1afcc6f4 replay_id=64297369600 payload_len=124
+[2025-10-23T12:36:59.620Z] Processing event: schema_id=MXWHgpzF_NjbjwbgY8fUCg event_id=6fdc7c9b-5e1a-4ae0-8a30-36554ddc0b16 replay_id=64297435136 payload_len=121
+[2025-10-23T12:36:59.622Z] Processing event: schema_id=MXWHgpzF_NjbjwbgY8fUCg event_id=6aeb4fb5-7903-4a19-80d7-5e0df562eff5 replay_id=64297500672 payload_len=129
+[2025-10-23T12:36:59.624Z] Processing event: schema_id=MXWHgpzF_NjbjwbgY8fUCg event_id=0a1ef4f1-210c-40b5-b58a-8bce79c05f65 replay_id=64297566208 payload_len=136
+[2025-10-23T12:36:59.625Z] Processing event: schema_id=MXWHgpzF_NjbjwbgY8fUCg event_id=8dedd937-3fbe-4424-80b8-cedac02f6e07 replay_id=64297631744 payload_len=119
+[2025-10-23T12:36:59.627Z] Processing event: schema_id=MXWHgpzF_NjbjwbgY8fUCg event_id=ac96473f-3ea6-4d05-9fc1-3c0c9a497083 replay_id=64297697280 payload_len=139
+[2025-10-23T12:36:59.628Z] Processing event: schema_id=MXWHgpzF_NjbjwbgY8fUCg event_id=af410f1e-d7f9-4316-928c-db8b7ec5e216 replay_id=64297762816 payload_len=129
+[2025-10-23T12:36:59.629Z] Processing event: schema_id=MXWHgpzF_NjbjwbgY8fUCg event_id=1dbc96dc-a6d2-4f86-81fe-480dc1700f50 replay_id=64297828352 payload_len=131
+[2025-10-23T12:36:59.630Z] Processing event: schema_id=MXWHgpzF_NjbjwbgY8fUCg event_id=a39d919b-1fbf-44eb-b299-0034a7c9a864 replay_id=64297893888 payload_len=119
+[2025-10-23T12:36:59.632Z] Processing event: schema_id=MXWHgpzF_NjbjwbgY8fUCg event_id=0d215dfa-686b-47ce-9b15-a329b842790b replay_id=64297959424 payload_len=120
+[2025-10-23T12:36:59.633Z] Processing event: schema_id=MXWHgpzF_NjbjwbgY8fUCg event_id=7668c7c1-cfd3-4ebe-afbb-027721c76294 replay_id=64298024960 payload_len=131
+[2025-10-23T12:36:59.634Z] Processing event: schema_id=MXWHgpzF_NjbjwbgY8fUCg event_id=d2c43eb4-ec16-4699-a992-f038fc58a1fd replay_id=64298090496 payload_len=127
+[2025-10-23T12:36:59.636Z] Processing event: schema_id=MXWHgpzF_NjbjwbgY8fUCg event_id=f0c755b4-fe16-48e5-a110-95a68c97e9db replay_id=64298156032 payload_len=131
+[2025-10-23T12:36:59.638Z] Processing event: schema_id=MXWHgpzF_NjbjwbgY8fUCg event_id=e9625820-7506-4c88-95fd-e0a9bf5c2786 replay_id=64298221568 payload_len=134
+[2025-10-23T12:36:59.639Z] Processing event: schema_id=MXWHgpzF_NjbjwbgY8fUCg event_id=bfe4647f-0b4e-4706-b9c5-2af6b635aecc replay_id=64298287104 payload_len=134
+[2025-10-23T12:36:59.640Z] Processing event: schema_id=MXWHgpzF_NjbjwbgY8fUCg event_id=3421d628-0908-4af6-add9-5cde6bec7ccc replay_id=64298352640 payload_len=124
+[2025-10-23T12:36:59.642Z] Processing event: schema_id=MXWHgpzF_NjbjwbgY8fUCg event_id=505a8add-a81c-42f1-8c33-abf4d08093a4 replay_id=64298418176 payload_len=120
+[2025-10-23T12:36:59.643Z] Processing event: schema_id=MXWHgpzF_NjbjwbgY8fUCg event_id=0434d39a-43bf-45b2-b733-a24a8a09422c replay_id=64298483712 payload_len=120
+[2025-10-23T12:36:59.644Z] Processing event: schema_id=MXWHgpzF_NjbjwbgY8fUCg event_id=382f5ef0-7c14-4b9a-9745-2e9fa0eaf179 replay_id=64301301760 payload_len=125
+[2025-10-23T12:36:59.646Z] Processing event: schema_id=MXWHgpzF_NjbjwbgY8fUCg event_id=cf409e60-f938-4246-a7b9-e3f94ee6e428 replay_id=64301367296 payload_len=121
+[2025-10-23T12:36:59.647Z] Processing event: schema_id=MXWHgpzF_NjbjwbgY8fUCg event_id=b60a7b43-8fb4-4a9b-83d5-ab3b611aa188 replay_id=64301432832 payload_len=126
+[2025-10-23T12:36:59.649Z] Processing event: schema_id=MXWHgpzF_NjbjwbgY8fUCg event_id=5154b5af-529d-44d1-9623-323024b61913 replay_id=64301498368 payload_len=126
+[2025-10-23T12:36:59.650Z] Processing event: schema_id=MXWHgpzF_NjbjwbgY8fUCg event_id=47bbe3f6-302f-4a9e-99a7-e4800e0f87a2 replay_id=64301563904 payload_len=119
+[2025-10-23T12:36:59.651Z] Processing event: schema_id=MXWHgpzF_NjbjwbgY8fUCg event_id=c08f3d5f-9ca3-49c8-99ae-8dc2cc20d044 replay_id=64301629440 payload_len=137
+[2025-10-23T12:36:59.653Z] Processing event: schema_id=MXWHgpzF_NjbjwbgY8fUCg event_id=95ea55f6-1975-4b32-8b53-dea26f83b4d7 replay_id=64301694976 payload_len=127
+[2025-10-23T12:36:59.654Z] Processing event: schema_id=MXWHgpzF_NjbjwbgY8fUCg event_id=f331c8f5-eabb-4eb7-a2ac-ec6785576900 replay_id=64301760512 payload_len=118
+[2025-10-23T12:36:59.655Z] Processing event: schema_id=MXWHgpzF_NjbjwbgY8fUCg event_id=0e927950-447d-4e6c-8103-47953edd1c84 replay_id=64301826048 payload_len=118
+[2025-10-23T12:36:59.657Z] Processing event: schema_id=MXWHgpzF_NjbjwbgY8fUCg event_id=11ae026d-94e6-4c95-99e8-03508fe66eb5 replay_id=64301891584 payload_len=121
+[2025-10-23T12:36:59.658Z] Processing event: schema_id=MXWHgpzF_NjbjwbgY8fUCg event_id=ff8c4848-5fc5-4b0b-b343-305d09ce2fe6 replay_id=64305430528 payload_len=130
+[2025-10-23T12:36:59.659Z] Processing event: schema_id=MXWHgpzF_NjbjwbgY8fUCg event_id=7d304d52-f95c-4410-9574-86270a7b4d72 replay_id=64305496064 payload_len=124
+[2025-10-23T12:36:59.661Z] Processing event: schema_id=MXWHgpzF_NjbjwbgY8fUCg event_id=af67b957-fa16-495a-ad74-954bd5d47dd9 replay_id=64305561600 payload_len=131
+[2025-10-23T12:36:59.662Z] Processing event: schema_id=MXWHgpzF_NjbjwbgY8fUCg event_id=b4c22bb9-a95f-4919-90e2-33cc74ba8084 replay_id=64305627136 payload_len=124
+[2025-10-23T12:36:59.664Z] Processing event: schema_id=MXWHgpzF_NjbjwbgY8fUCg event_id=8082b6f9-3c09-4664-bae1-2c982ed72577 replay_id=64305692672 payload_len=114
+[2025-10-23T12:36:59.666Z] Processing event: schema_id=MXWHgpzF_NjbjwbgY8fUCg event_id=f8c8724f-50e1-49f7-8049-73509863c8e0 replay_id=64305758208 payload_len=128
+[2025-10-23T12:36:59.668Z] Processing event: schema_id=MXWHgpzF_NjbjwbgY8fUCg event_id=81097c0a-6f51-4660-ae20-6fe5ca3eed80 replay_id=64305823744 payload_len=135
+[2025-10-23T12:36:59.670Z] Fetched 38 events from topic /event/Contact_Delete__e
+[2025-10-23T12:36:59.671Z] Closed Pub/Sub API connection
+[2025-10-23T12:36:59.672Z] ================================================================================
+[2025-10-23T12:36:59.673Z] RETURNED from fetch_events_via_pubsub
+[2025-10-23T12:36:59.674Z]   - events type: list
+[2025-10-23T12:36:59.676Z]   - events count: 38
+[2025-10-23T12:36:59.677Z]   - first event keys: ['topic', 'replay_id', 'event_id', 'schema_id', 'payload', 'latest_replay_id']
+[2025-10-23T12:36:59.679Z] ================================================================================
+[2025-10-23T12:36:59.680Z] Fetched 38 events from topic /event/Contact_Delete__e
+[2025-10-23T12:36:59.681Z] No replay_id found for topic /event/Event_Delete__e - will fetch from EARLIEST
+[2025-10-23T12:36:59.686Z] Starting new subscription to /event/Event_Delete__e (no replay_id, will use EARLIEST)    
+[2025-10-23T12:36:59.688Z] ================================================================================
+[2025-10-23T12:36:59.690Z] CALLING fetch_events_via_pubsub for topic: /event/Event_Delete__e
+[2025-10-23T12:36:59.691Z]   - access_token: Present (112 chars)
+[2025-10-23T12:36:59.693Z]   - instance_url: https://blueowlcrm.my.salesforce.com
+[2025-10-23T12:36:59.694Z]   - tenant_id: 00D3t000005us1xEAA
+[2025-10-23T12:36:59.696Z]   - replay_id: None
+[2025-10-23T12:36:59.697Z]   - max_events: 100
+[2025-10-23T12:36:59.699Z] ================================================================================
+[2025-10-23T12:36:59.701Z] Connecting to Pub/Sub API at api.pubsub.salesforce.com:7443
+[2025-10-23T12:36:59.702Z] Using tenant_id: 00D3t000005us1xEAA
+[2025-10-23T12:36:59.703Z] Using instance_url: https://blueowlcrm.my.salesforce.com
+[2025-10-23T12:36:59.704Z] Access token length: 112 chars
+[2025-10-23T12:36:59.706Z] ✓ Connected to Salesforce Pub/Sub API at api.pubsub.salesforce.com:7443
+[2025-10-23T12:36:59.731Z] The listener for function 'Functions.TimerPoller' was unable to start.
+[2025-10-23T12:36:59.732Z] The listener for function 'Functions.TimerPoller' was unable to start. Azure.Storage.Blobs: Service request failed.
+[2025-10-23T12:36:59.734Z] Status: 403 (This request is not authorized to perform this operation.)
+[2025-10-23T12:36:59.735Z] ErrorCode: AuthorizationFailure
+[2025-10-23T12:36:59.736Z]
+[2025-10-23T12:36:59.736Z] Headers:
+[2025-10-23T12:36:59.738Z] Transfer-Encoding: chunked
+[2025-10-23T12:36:59.739Z] Server: Microsoft-HTTPAPI/2.0
+[2025-10-23T12:36:59.740Z] x-ms-request-id: d0b828d6-901e-0071-0519-443853000000
+[2025-10-23T12:36:59.742Z] x-ms-client-request-id: 8b87ac91-71db-470f-bf6d-716f837ed96b
+[2025-10-23T12:36:59.744Z] x-ms-error-code: AuthorizationFailure
+[2025-10-23T12:36:59.748Z] Date: Thu, 23 Oct 2025 12:36:59 GMT
+[2025-10-23T12:36:59.750Z] .
+[2025-10-23T12:37:00.831Z] Retrieved topic info for /event/Event_Delete__e: schema_id=ZakJ8AFcyQd6TLaz_GUXxw
+[2025-10-23T12:37:01.625Z] Avro schema GET https://blueowlcrm.my.salesforce.com/services/data/v64.0/event/eventSchema/ZakJ8AFcyQd6TLaz_GUXxw?payloadFormat=COMPACT -> 200
+[2025-10-23T12:37:01.627Z] Retrieved schema for schema_id=ZakJ8AFcyQd6TLaz_GUXxw via REST
+[2025-10-23T12:37:01.628Z] Using schema for decoding: ZakJ8AFcyQd6TLaz_GUXxw
+[2025-10-23T12:37:01.629Z] Subscribing to /event/Event_Delete__e from EARLIEST (first run)
+[2025-10-23T12:37:01.631Z] Starting Subscribe RPC call for /event/Event_Delete__e...
+[2025-10-23T12:37:01.632Z] Subscribe RPC call established, waiting for response...
+[2025-10-23T12:37:02.948Z] Received fetch_response #1 from stream
+[2025-10-23T12:37:02.950Z] latest_replay_id: 64306413568 (length: 10 bytes)
+[2025-10-23T12:37:02.951Z] pending_num_requested: 93
+[2025-10-23T12:37:02.953Z] events attribute: Present (type: RepeatedCompositeContainer)
+[2025-10-23T12:37:02.954Z] events list length: 7
+[2025-10-23T12:37:02.955Z] Received batch of 7 event(s) from /event/Event_Delete__e
+[2025-10-23T12:37:02.956Z] Processing event: schema_id=ZakJ8AFcyQd6TLaz_GUXxw event_id=19deaa7b-1156-4f30-a503-35aac5864bd7 replay_id=64289177600 payload_len=150
+[2025-10-23T12:37:02.959Z] Processing event: schema_id=ZakJ8AFcyQd6TLaz_GUXxw event_id=32dec1bb-e67d-43bb-b4b2-3996c7e3a30b replay_id=64294027264 payload_len=213
+[2025-10-23T12:37:02.963Z] Processing event: schema_id=ZakJ8AFcyQd6TLaz_GUXxw event_id=8793b526-112c-4c94-8edb-a26fe48616a3 replay_id=64294813696 payload_len=168
+[2025-10-23T12:37:02.966Z] Processing event: schema_id=ZakJ8AFcyQd6TLaz_GUXxw event_id=4289fae0-77bb-48e8-9663-1550c677cae5 replay_id=64303464448 payload_len=154
+[2025-10-23T12:37:02.968Z] Processing event: schema_id=ZakJ8AFcyQd6TLaz_GUXxw event_id=9ac52131-ab7c-44b3-86d9-1480bd4b6d5f replay_id=64303529984 payload_len=160
+[2025-10-23T12:37:02.970Z] Processing event: schema_id=ZakJ8AFcyQd6TLaz_GUXxw event_id=38adf47d-3a3a-488d-93c0-9535f1205790 replay_id=64303595520 payload_len=154
+[2025-10-23T12:37:02.973Z] Processing event: schema_id=ZakJ8AFcyQd6TLaz_GUXxw event_id=bd89e2eb-b973-447f-9ee4-dbb6ba38d683 replay_id=64306413568 payload_len=168
+[2025-10-23T12:37:02.975Z] Fetched 7 events from topic /event/Event_Delete__e
+[2025-10-23T12:37:02.980Z] Closed Pub/Sub API connection
+[2025-10-23T12:37:02.981Z] ================================================================================
+[2025-10-23T12:37:02.983Z] RETURNED from fetch_events_via_pubsub
+[2025-10-23T12:37:02.984Z]   - events type: list
+[2025-10-23T12:37:02.986Z]   - events count: 7
+[2025-10-23T12:37:02.987Z]   - first event keys: ['topic', 'replay_id', 'event_id', 'schema_id', 'payload', 'latest_replay_id']
+[2025-10-23T12:37:02.989Z] ================================================================================
+[2025-10-23T12:37:02.990Z] Fetched 7 events from topic /event/Event_Delete__e
+[2025-10-23T12:37:02.991Z] No replay_id found for topic /event/Fund_Delete__e - will fetch from EARLIEST
+[2025-10-23T12:37:02.993Z] Starting new subscription to /event/Fund_Delete__e (no replay_id, will use EARLIEST)     
+[2025-10-23T12:37:02.995Z] ================================================================================
+[2025-10-23T12:37:02.996Z] CALLING fetch_events_via_pubsub for topic: /event/Fund_Delete__e
+[2025-10-23T12:37:02.998Z]   - access_token: Present (112 chars)
+[2025-10-23T12:37:03.000Z]   - instance_url: https://blueowlcrm.my.salesforce.com
+[2025-10-23T12:37:03.003Z]   - tenant_id: 00D3t000005us1xEAA
+[2025-10-23T12:37:03.005Z]   - replay_id: None
+[2025-10-23T12:37:03.007Z]   - max_events: 100
+[2025-10-23T12:37:03.008Z] ================================================================================
+[2025-10-23T12:37:03.009Z] Connecting to Pub/Sub API at api.pubsub.salesforce.com:7443
+[2025-10-23T12:37:03.010Z] Using tenant_id: 00D3t000005us1xEAA
+[2025-10-23T12:37:03.012Z] Using instance_url: https://blueowlcrm.my.salesforce.com
+[2025-10-23T12:37:03.013Z] Access token length: 112 chars
+[2025-10-23T12:37:03.014Z] ✓ Connected to Salesforce Pub/Sub API at api.pubsub.salesforce.com:7443
+[2025-10-23T12:37:04.102Z] Retrieved topic info for /event/Fund_Delete__e: schema_id=EaYyWjay095xtt1zP8Fi2Q
+[2025-10-23T12:37:04.933Z] Avro schema GET https://blueowlcrm.my.salesforce.com/services/data/v64.0/event/eventSchema/EaYyWjay095xtt1zP8Fi2Q?payloadFormat=COMPACT -> 200
+[2025-10-23T12:37:04.935Z] Retrieved schema for schema_id=EaYyWjay095xtt1zP8Fi2Q via REST
+[2025-10-23T12:37:04.937Z] Using schema for decoding: EaYyWjay095xtt1zP8Fi2Q
+[2025-10-23T12:37:04.938Z] Subscribing to /event/Fund_Delete__e from EARLIEST (first run)
+[2025-10-23T12:37:04.939Z] Starting Subscribe RPC call for /event/Fund_Delete__e...
+[2025-10-23T12:37:04.940Z] Subscribe RPC call established, waiting for response...
+[2025-10-23T12:37:19.962Z] The listener for function 'Functions.TimerPoller' was unable to start.
+[2025-10-23T12:37:19.963Z] The listener for function 'Functions.TimerPoller' was unable to start. Azure.Storage.Blobs: Service request failed.
+[2025-10-23T12:37:19.965Z] Status: 403 (This request is not authorized to perform this operation.)
+[2025-10-23T12:37:19.966Z] ErrorCode: AuthorizationFailure
+[2025-10-23T12:37:19.967Z]
+[2025-10-23T12:37:19.968Z] Headers:
+[2025-10-23T12:37:19.969Z] Transfer-Encoding: chunked
+[2025-10-23T12:37:19.970Z] Server: Microsoft-HTTPAPI/2.0
+[2025-10-23T12:37:19.971Z] x-ms-request-id: d0b89273-901e-0071-4219-443853000000
+[2025-10-23T12:37:19.972Z] x-ms-client-request-id: 1e190ea2-53e4-4967-a3e7-af805d93c923
+[2025-10-23T12:37:19.974Z] x-ms-error-code: AuthorizationFailure
+[2025-10-23T12:37:19.977Z] Date: Thu, 23 Oct 2025 12:37:19 GMT
+[2025-10-23T12:37:19.979Z] .
+[2025-10-23T12:37:53.247Z] The listener for function 'Functions.TimerPoller' was unable to start.
+[2025-10-23T12:37:53.249Z] The listener for function 'Functions.TimerPoller' was unable to start. Azure.Storage.Blobs: Service request failed.
+[2025-10-23T12:37:53.250Z] Status: 403 (This request is not authorized to perform this operation.)
+[2025-10-23T12:37:53.251Z] ErrorCode: AuthorizationFailure
+[2025-10-23T12:37:53.252Z]
+[2025-10-23T12:37:53.253Z] Headers:
+[2025-10-23T12:37:53.255Z] Transfer-Encoding: chunked
+[2025-10-23T12:37:53.256Z] Server: Microsoft-HTTPAPI/2.0
+[2025-10-23T12:37:53.257Z] x-ms-request-id: 0f0244f7-d01e-003d-0319-44a863000000
+[2025-10-23T12:37:53.258Z] x-ms-client-request-id: 47016eaa-3b98-47f1-a9e5-1fbe0e916ae3
+[2025-10-23T12:37:53.260Z] x-ms-error-code: AuthorizationFailure
+[2025-10-23T12:37:53.262Z] Date: Thu, 23 Oct 2025 12:37:52 GMT
+[2025-10-23T12:37:53.264Z] .
+[2025-10-23T12:38:05.679Z] Received fetch_response #1 from stream
+[2025-10-23T12:38:05.681Z] latest_replay_id: 64101613568 (length: 10 bytes)
+[2025-10-23T12:38:05.683Z] pending_num_requested: 100
+[2025-10-23T12:38:05.684Z] events attribute: Present (type: RepeatedCompositeContainer)
+[2025-10-23T12:38:05.685Z] events list length: 0
+[2025-10-23T12:38:05.687Z] No events in this batch - empty response or keepalive. Breaking.
+[2025-10-23T12:38:05.688Z] Fetched 0 events from topic /event/Fund_Delete__e
+[2025-10-23T12:38:05.709Z] Closed Pub/Sub API connection
+[2025-10-23T12:38:05.712Z] ================================================================================
+[2025-10-23T12:38:05.716Z] RETURNED from fetch_events_via_pubsub
+[2025-10-23T12:38:05.718Z]   - events type: list
+[2025-10-23T12:38:05.720Z]   - events count: 0
+[2025-10-23T12:38:05.722Z] ================================================================================
+[2025-10-23T12:38:05.724Z] Fetched 0 events from topic /event/Fund_Delete__e
+[2025-10-23T12:38:05.726Z] No replay_id found for topic /event/Investments_Delete__e - will fetch from EARLIEST     
+[2025-10-23T12:38:05.727Z] Starting new subscription to /event/Investments_Delete__e (no replay_id, will use EARLIEST)
+[2025-10-23T12:38:05.728Z] ================================================================================
+[2025-10-23T12:38:05.729Z] CALLING fetch_events_via_pubsub for topic: /event/Investments_Delete__e
+[2025-10-23T12:38:05.730Z]   - access_token: Present (112 chars)
+[2025-10-23T12:38:05.731Z]   - instance_url: https://blueowlcrm.my.salesforce.com
+[2025-10-23T12:38:05.733Z]   - tenant_id: 00D3t000005us1xEAA
+[2025-10-23T12:38:05.734Z]   - replay_id: None
+[2025-10-23T12:38:05.735Z]   - max_events: 100
+[2025-10-23T12:38:05.736Z] ================================================================================
+[2025-10-23T12:38:05.737Z] Connecting to Pub/Sub API at api.pubsub.salesforce.com:7443
+[2025-10-23T12:38:05.739Z] Using tenant_id: 00D3t000005us1xEAA
+[2025-10-23T12:38:05.740Z] Using instance_url: https://blueowlcrm.my.salesforce.com
+[2025-10-23T12:38:05.742Z] Access token length: 112 chars
+[2025-10-23T12:38:05.744Z] ✓ Connected to Salesforce Pub/Sub API at api.pubsub.salesforce.com:7443
+[2025-10-23T12:38:06.931Z] Retrieved topic info for /event/Investments_Delete__e: schema_id=gmquS1Mxos-T_bPxYCSlxg
+[2025-10-23T12:38:08.013Z] Avro schema GET https://blueowlcrm.my.salesforce.com/services/data/v64.0/event/eventSchema/gmquS1Mxos-T_bPxYCSlxg?payloadFormat=COMPACT -> 200
+[2025-10-23T12:38:08.014Z] Retrieved schema for schema_id=gmquS1Mxos-T_bPxYCSlxg via REST
+[2025-10-23T12:38:08.016Z] Using schema for decoding: gmquS1Mxos-T_bPxYCSlxg
+[2025-10-23T12:38:08.017Z] Subscribing to /event/Investments_Delete__e from EARLIEST (first run)
+[2025-10-23T12:38:08.018Z] Starting Subscribe RPC call for /event/Investments_Delete__e...
+[2025-10-23T12:38:08.019Z] Subscribe RPC call established, waiting for response...
+[2025-10-23T12:38:55.261Z] The listener for function 'Functions.TimerPoller' was unable to start.
+[2025-10-23T12:38:55.262Z] The listener for function 'Functions.TimerPoller' was unable to start. Azure.Storage.Blobs: Service request failed.
+[2025-10-23T12:38:55.263Z] Status: 403 (This request is not authorized to perform this operation.)
+[2025-10-23T12:38:55.264Z] ErrorCode: AuthorizationFailure
+[2025-10-23T12:38:55.266Z]
+[2025-10-23T12:38:55.266Z] Headers:
+[2025-10-23T12:38:55.268Z] Transfer-Encoding: chunked
+[2025-10-23T12:38:55.269Z] Server: Microsoft-HTTPAPI/2.0
+[2025-10-23T12:38:55.270Z] x-ms-request-id: 0f03b7f1-d01e-003d-1219-44a863000000
+[2025-10-23T12:38:55.272Z] x-ms-client-request-id: d053f6cc-ed61-4806-b6fd-a488e53921e4
+[2025-10-23T12:38:55.273Z] x-ms-error-code: AuthorizationFailure
+[2025-10-23T12:38:55.275Z] Date: Thu, 23 Oct 2025 12:38:54 GMT
+[2025-10-23T12:38:55.276Z] .
+[2025-10-23T12:39:08.549Z] Received fetch_response #1 from stream
+[2025-10-23T12:39:08.551Z] latest_replay_id: 64101613568 (length: 10 bytes)
+[2025-10-23T12:39:08.553Z] pending_num_requested: 100
+[2025-10-23T12:39:08.554Z] events attribute: Present (type: RepeatedCompositeContainer)
+[2025-10-23T12:39:08.555Z] events list length: 0
+[2025-10-23T12:39:08.556Z] No events in this batch - empty response or keepalive. Breaking.
+[2025-10-23T12:39:08.558Z] Fetched 0 events from topic /event/Investments_Delete__e
+[2025-10-23T12:39:08.578Z] Closed Pub/Sub API connection
+[2025-10-23T12:39:08.579Z] ================================================================================
+[2025-10-23T12:39:08.581Z] RETURNED from fetch_events_via_pubsub
+[2025-10-23T12:39:08.583Z]   - events type: list
+[2025-10-23T12:39:08.584Z]   - events count: 0
+[2025-10-23T12:39:08.587Z] ================================================================================
+[2025-10-23T12:39:08.589Z] Fetched 0 events from topic /event/Investments_Delete__e
+[2025-10-23T12:39:08.591Z] No replay_id found for topic /event/Legal_Entity_Delete__e - will fetch from EARLIEST    
+[2025-10-23T12:39:08.592Z] Starting new subscription to /event/Legal_Entity_Delete__e (no replay_id, will use EARLIEST)
+[2025-10-23T12:39:08.594Z] ================================================================================
+[2025-10-23T12:39:08.596Z] CALLING fetch_events_via_pubsub for topic: /event/Legal_Entity_Delete__e
+[2025-10-23T12:39:08.597Z]   - access_token: Present (112 chars)
+[2025-10-23T12:39:08.599Z]   - instance_url: https://blueowlcrm.my.salesforce.com
+[2025-10-23T12:39:08.601Z]   - tenant_id: 00D3t000005us1xEAA
+[2025-10-23T12:39:08.602Z]   - replay_id: None
+[2025-10-23T12:39:08.603Z]   - max_events: 100
+[2025-10-23T12:39:08.604Z] ================================================================================
+[2025-10-23T12:39:08.606Z] Connecting to Pub/Sub API at api.pubsub.salesforce.com:7443
+[2025-10-23T12:39:08.607Z] Using tenant_id: 00D3t000005us1xEAA
+[2025-10-23T12:39:08.608Z] Using instance_url: https://blueowlcrm.my.salesforce.com
+[2025-10-23T12:39:08.609Z] Access token length: 112 chars
+[2025-10-23T12:39:08.610Z] ✓ Connected to Salesforce Pub/Sub API at api.pubsub.salesforce.com:7443
+[2025-10-23T12:39:09.962Z] Retrieved topic info for /event/Legal_Entity_Delete__e: schema_id=v_dJr8a6ZgMHIKtcGPnxDQ
+[2025-10-23T12:39:10.901Z] Avro schema GET https://blueowlcrm.my.salesforce.com/services/data/v64.0/event/eventSchema/v_dJr8a6ZgMHIKtcGPnxDQ?payloadFormat=COMPACT -> 200
+[2025-10-23T12:39:10.903Z] Retrieved schema for schema_id=v_dJr8a6ZgMHIKtcGPnxDQ via REST
+[2025-10-23T12:39:10.904Z] Using schema for decoding: v_dJr8a6ZgMHIKtcGPnxDQ
+[2025-10-23T12:39:10.905Z] Subscribing to /event/Legal_Entity_Delete__e from EARLIEST (first run)
+[2025-10-23T12:39:10.907Z] Starting Subscribe RPC call for /event/Legal_Entity_Delete__e...
+[2025-10-23T12:39:10.908Z] Subscribe RPC call established, waiting for response...
+[2025-10-23T12:40:11.361Z] Received fetch_response #1 from stream
+[2025-10-23T12:40:11.363Z] latest_replay_id: 64101613568 (length: 10 bytes)
+[2025-10-23T12:40:11.364Z] pending_num_requested: 100
+[2025-10-23T12:40:11.365Z] events attribute: Present (type: RepeatedCompositeContainer)
+[2025-10-23T12:40:11.367Z] events list length: 0
+[2025-10-23T12:40:11.368Z] No events in this batch - empty response or keepalive. Breaking.
+[2025-10-23T12:40:11.369Z] Fetched 0 events from topic /event/Legal_Entity_Delete__e
+[2025-10-23T12:40:11.393Z] Closed Pub/Sub API connection
+[2025-10-23T12:40:11.395Z] ================================================================================
+[2025-10-23T12:40:11.397Z] RETURNED from fetch_events_via_pubsub
+[2025-10-23T12:40:11.400Z]   - events type: list
+[2025-10-23T12:40:11.403Z]   - events count: 0
+[2025-10-23T12:40:11.404Z] ================================================================================
+[2025-10-23T12:40:11.406Z] Fetched 0 events from topic /event/Legal_Entity_Delete__e
+[2025-10-23T12:40:11.407Z] No replay_id found for topic /event/LP_Consultant_Relationship_Delete__e - will fetch from EARLIEST
+[2025-10-23T12:40:11.409Z] Starting new subscription to /event/LP_Consultant_Relationship_Delete__e (no replay_id, will use EARLIEST)
+[2025-10-23T12:40:11.410Z] ================================================================================
+[2025-10-23T12:40:11.412Z] CALLING fetch_events_via_pubsub for topic: /event/LP_Consultant_Relationship_Delete__e   
+[2025-10-23T12:40:11.413Z]   - access_token: Present (112 chars)
+[2025-10-23T12:40:11.414Z]   - instance_url: https://blueowlcrm.my.salesforce.com
+[2025-10-23T12:40:11.415Z]   - tenant_id: 00D3t000005us1xEAA
+[2025-10-23T12:40:11.417Z]   - replay_id: None
+[2025-10-23T12:40:11.418Z]   - max_events: 100
+[2025-10-23T12:40:11.419Z] ================================================================================
+[2025-10-23T12:40:11.420Z] Connecting to Pub/Sub API at api.pubsub.salesforce.com:7443
+[2025-10-23T12:40:11.421Z] Using tenant_id: 00D3t000005us1xEAA
+[2025-10-23T12:40:11.422Z] Using instance_url: https://blueowlcrm.my.salesforce.com
+[2025-10-23T12:40:11.423Z] Access token length: 112 chars
+[2025-10-23T12:40:11.425Z] ✓ Connected to Salesforce Pub/Sub API at api.pubsub.salesforce.com:7443
+[2025-10-23T12:40:12.600Z] Retrieved topic info for /event/LP_Consultant_Relationship_Delete__e: schema_id=1C9cw85mg9SU6cgh7qgu_w
+[2025-10-23T12:40:13.716Z] Avro schema GET https://blueowlcrm.my.salesforce.com/services/data/v64.0/event/eventSchema/1C9cw85mg9SU6cgh7qgu_w?payloadFormat=COMPACT -> 200
+[2025-10-23T12:40:13.718Z] Retrieved schema for schema_id=1C9cw85mg9SU6cgh7qgu_w via REST
+[2025-10-23T12:40:13.720Z] Using schema for decoding: 1C9cw85mg9SU6cgh7qgu_w
+[2025-10-23T12:40:13.721Z] Subscribing to /event/LP_Consultant_Relationship_Delete__e from EARLIEST (first run)     
+[2025-10-23T12:40:13.722Z] Starting Subscribe RPC call for /event/LP_Consultant_Relationship_Delete__e...
+[2025-10-23T12:40:13.723Z] Subscribe RPC call established, waiting for response...
+[2025-10-23T12:40:16.640Z] Received fetch_response #1 from stream
+[2025-10-23T12:40:16.642Z] latest_replay_id: 64526483456 (length: 10 bytes)
+[2025-10-23T12:40:16.643Z] pending_num_requested: 99
+[2025-10-23T12:40:16.644Z] events attribute: Present (type: RepeatedCompositeContainer)
+[2025-10-23T12:40:16.646Z] events list length: 1
+[2025-10-23T12:40:16.647Z] Received batch of 1 event(s) from /event/LP_Consultant_Relationship_Delete__e
+[2025-10-23T12:40:16.649Z] Processing event: schema_id=1C9cw85mg9SU6cgh7qgu_w event_id=49b2ef3d-af3e-4d80-b88c-9139f3d8e2f7 replay_id=64526483456 payload_len=103
+[2025-10-23T12:40:16.651Z] Fetched 1 events from topic /event/LP_Consultant_Relationship_Delete__e
+[2025-10-23T12:40:16.671Z] Closed Pub/Sub API connection
+[2025-10-23T12:40:16.673Z] ================================================================================
+[2025-10-23T12:40:16.674Z] RETURNED from fetch_events_via_pubsub
+[2025-10-23T12:40:16.676Z]   - events type: list
+[2025-10-23T12:40:16.679Z]   - events count: 1
+[2025-10-23T12:40:16.681Z]   - first event keys: ['topic', 'replay_id', 'event_id', 'schema_id', 'payload', 'latest_replay_id']
+[2025-10-23T12:40:16.683Z] ================================================================================
+[2025-10-23T12:40:16.685Z] Fetched 1 events from topic /event/LP_Consultant_Relationship_Delete__e
+[2025-10-23T12:40:16.687Z] No replay_id found for topic /event/Opportunity_Delete__e - will fetch from EARLIEST     
+[2025-10-23T12:40:16.689Z] Starting new subscription to /event/Opportunity_Delete__e (no replay_id, will use EARLIEST)
+[2025-10-23T12:40:16.690Z] ================================================================================
+[2025-10-23T12:40:16.692Z] CALLING fetch_events_via_pubsub for topic: /event/Opportunity_Delete__e
+[2025-10-23T12:40:16.694Z]   - access_token: Present (112 chars)
+[2025-10-23T12:40:16.695Z]   - instance_url: https://blueowlcrm.my.salesforce.com
+[2025-10-23T12:40:16.696Z]   - tenant_id: 00D3t000005us1xEAA
+[2025-10-23T12:40:16.697Z]   - replay_id: None
+[2025-10-23T12:40:16.698Z]   - max_events: 100
+[2025-10-23T12:40:16.700Z] ================================================================================
+[2025-10-23T12:40:16.701Z] Connecting to Pub/Sub API at api.pubsub.salesforce.com:7443
+[2025-10-23T12:40:16.702Z] Using tenant_id: 00D3t000005us1xEAA
+[2025-10-23T12:40:16.703Z] Using instance_url: https://blueowlcrm.my.salesforce.com
+[2025-10-23T12:40:16.705Z] Access token length: 112 chars
+[2025-10-23T12:40:16.706Z] ✓ Connected to Salesforce Pub/Sub API at api.pubsub.salesforce.com:7443
+[2025-10-23T12:40:17.862Z] Retrieved topic info for /event/Opportunity_Delete__e: schema_id=7oE6I0m-ZVUzfzMGEstCRA
+[2025-10-23T12:40:18.640Z] Avro schema GET https://blueowlcrm.my.salesforce.com/services/data/v64.0/event/eventSchema/7oE6I0m-ZVUzfzMGEstCRA?payloadFormat=COMPACT -> 200
+[2025-10-23T12:40:18.642Z] Retrieved schema for schema_id=7oE6I0m-ZVUzfzMGEstCRA via REST
+[2025-10-23T12:40:18.643Z] Using schema for decoding: 7oE6I0m-ZVUzfzMGEstCRA
+[2025-10-23T12:40:18.644Z] Subscribing to /event/Opportunity_Delete__e from EARLIEST (first run)
+[2025-10-23T12:40:18.645Z] Starting Subscribe RPC call for /event/Opportunity_Delete__e...
+[2025-10-23T12:40:18.647Z] Subscribe RPC call established, waiting for response...
+[2025-10-23T12:40:21.262Z] Received fetch_response #1 from stream
+[2025-10-23T12:40:21.264Z] latest_replay_id: 64588283904 (length: 10 bytes)
+[2025-10-23T12:40:21.265Z] pending_num_requested: 99
+[2025-10-23T12:40:21.266Z] events attribute: Present (type: RepeatedCompositeContainer)
+[2025-10-23T12:40:21.267Z] events list length: 1
+[2025-10-23T12:40:21.269Z] Received batch of 1 event(s) from /event/Opportunity_Delete__e
+[2025-10-23T12:40:21.270Z] Processing event: schema_id=7oE6I0m-ZVUzfzMGEstCRA event_id=c2af2668-b6a5-4488-ac52-0592aea25032 replay_id=64588283904 payload_len=197
+[2025-10-23T12:40:21.272Z] Fetched 1 events from topic /event/Opportunity_Delete__e
+[2025-10-23T12:40:21.292Z] Closed Pub/Sub API connection
+[2025-10-23T12:40:21.293Z] ================================================================================
+[2025-10-23T12:40:21.295Z] RETURNED from fetch_events_via_pubsub
+[2025-10-23T12:40:21.296Z]   - events type: list
+[2025-10-23T12:40:21.297Z]   - events count: 1
+[2025-10-23T12:40:21.299Z]   - first event keys: ['topic', 'replay_id', 'event_id', 'schema_id', 'payload', 'latest_replay_id']
+[2025-10-23T12:40:21.300Z] ================================================================================
+[2025-10-23T12:40:21.302Z] Fetched 1 events from topic /event/Opportunity_Delete__e
+[2025-10-23T12:40:21.303Z] No replay_id found for topic /event/Task_Delete__e - will fetch from EARLIEST
+[2025-10-23T12:40:21.307Z] Starting new subscription to /event/Task_Delete__e (no replay_id, will use EARLIEST)     
+[2025-10-23T12:40:21.310Z] ================================================================================
+[2025-10-23T12:40:21.312Z] CALLING fetch_events_via_pubsub for topic: /event/Task_Delete__e
+[2025-10-23T12:40:21.313Z]   - access_token: Present (112 chars)
+[2025-10-23T12:40:21.315Z]   - instance_url: https://blueowlcrm.my.salesforce.com
+[2025-10-23T12:40:21.317Z]   - tenant_id: 00D3t000005us1xEAA
+[2025-10-23T12:40:21.318Z]   - replay_id: None
+[2025-10-23T12:40:21.319Z]   - max_events: 100
+[2025-10-23T12:40:21.321Z] ================================================================================
+[2025-10-23T12:40:21.322Z] Connecting to Pub/Sub API at api.pubsub.salesforce.com:7443
+[2025-10-23T12:40:21.323Z] Using tenant_id: 00D3t000005us1xEAA
+[2025-10-23T12:40:21.324Z] Using instance_url: https://blueowlcrm.my.salesforce.com
+[2025-10-23T12:40:21.325Z] Access token length: 112 chars
+[2025-10-23T12:40:21.326Z] ✓ Connected to Salesforce Pub/Sub API at api.pubsub.salesforce.com:7443
+[2025-10-23T12:40:22.383Z] Retrieved topic info for /event/Task_Delete__e: schema_id=z9COVj5aaSSHgVbCj62Qhg
+[2025-10-23T12:40:23.349Z] Avro schema GET https://blueowlcrm.my.salesforce.com/services/data/v64.0/event/eventSchema/z9COVj5aaSSHgVbCj62Qhg?payloadFormat=COMPACT -> 200
+[2025-10-23T12:40:23.350Z] Retrieved schema for schema_id=z9COVj5aaSSHgVbCj62Qhg via REST
+[2025-10-23T12:40:23.352Z] Using schema for decoding: z9COVj5aaSSHgVbCj62Qhg
+[2025-10-23T12:40:23.353Z] Subscribing to /event/Task_Delete__e from EARLIEST (first run)
+[2025-10-23T12:40:23.354Z] Starting Subscribe RPC call for /event/Task_Delete__e...
+[2025-10-23T12:40:23.356Z] Subscribe RPC call established, waiting for response...
+[2025-10-23T12:40:25.167Z] Received fetch_response #1 from stream
+[2025-10-23T12:40:25.169Z] latest_replay_id: 64313098240 (length: 10 bytes)
+[2025-10-23T12:40:25.170Z] pending_num_requested: 84
+[2025-10-23T12:40:25.172Z] events attribute: Present (type: RepeatedCompositeContainer)
+[2025-10-23T12:40:25.173Z] events list length: 16
+[2025-10-23T12:40:25.175Z] Received batch of 16 event(s) from /event/Task_Delete__e
+[2025-10-23T12:40:25.176Z] Processing event: schema_id=z9COVj5aaSSHgVbCj62Qhg event_id=a6b413aa-b589-4024-8d26-bdf4d48958ea replay_id=64235241472 payload_len=8203
+[2025-10-23T12:40:25.178Z] Processing event: schema_id=z9COVj5aaSSHgVbCj62Qhg event_id=bba2c703-54ad-4394-957d-94e29e91b1ad replay_id=64235372544 payload_len=9418
+[2025-10-23T12:40:25.181Z] Processing event: schema_id=z9COVj5aaSSHgVbCj62Qhg event_id=e23f7926-0743-4883-ace7-90d10eaf26a2 replay_id=64235634688 payload_len=807
+[2025-10-23T12:40:25.183Z] Processing event: schema_id=z9COVj5aaSSHgVbCj62Qhg event_id=455e9544-150e-47d8-aef9-f465f84f8b26 replay_id=64285835264 payload_len=4748
+[2025-10-23T12:40:25.186Z] Processing event: schema_id=z9COVj5aaSSHgVbCj62Qhg event_id=c17cc1c5-c113-4d18-ba0a-c9dc21f09194 replay_id=64286097408 payload_len=2045
+[2025-10-23T12:40:25.188Z] Processing event: schema_id=z9COVj5aaSSHgVbCj62Qhg event_id=9d29b993-ad4e-4e5f-8985-e842fb0d72e0 replay_id=64286359552 payload_len=3511
+[2025-10-23T12:40:25.190Z] Processing event: schema_id=z9COVj5aaSSHgVbCj62Qhg event_id=a5fcff08-7c00-4cac-a2b9-6b17897a36f2 replay_id=64286752768 payload_len=7787
+[2025-10-23T12:40:25.191Z] Processing event: schema_id=z9COVj5aaSSHgVbCj62Qhg event_id=0f6efa37-403c-4f2f-8314-c7b3463ee52d replay_id=64286949376 payload_len=10578
+[2025-10-23T12:40:25.192Z] Processing event: schema_id=z9COVj5aaSSHgVbCj62Qhg event_id=392b69c6-5b7b-47d6-bedc-7ec64d338cdd replay_id=64287342592 payload_len=27033
+[2025-10-23T12:40:25.194Z] Processing event: schema_id=z9COVj5aaSSHgVbCj62Qhg event_id=1b80e7d2-0516-4dfa-b080-906592960904 replay_id=64289505280 payload_len=2318
+[2025-10-23T12:40:25.195Z] Processing event: schema_id=z9COVj5aaSSHgVbCj62Qhg event_id=54d4d051-f146-49ae-8b99-643524922ee8 replay_id=64289767424 payload_len=4525
+[2025-10-23T12:40:25.196Z] Processing event: schema_id=z9COVj5aaSSHgVbCj62Qhg event_id=1d1ac1d4-10b9-4a83-8464-3a0d1ccdb424 replay_id=64289964032 payload_len=1602
+[2025-10-23T12:40:25.198Z] Processing event: schema_id=z9COVj5aaSSHgVbCj62Qhg event_id=1532b28e-ffe8-46ec-99e7-00c6bf1817d4 replay_id=64290160640 payload_len=3446
+[2025-10-23T12:40:25.200Z] Processing event: schema_id=z9COVj5aaSSHgVbCj62Qhg event_id=bff63642-8b9d-43f9-a4dd-bd125722713c replay_id=64290291712 payload_len=14033
+[2025-10-23T12:40:25.201Z] Processing event: schema_id=z9COVj5aaSSHgVbCj62Qhg event_id=af60c84b-7cfb-4b6a-b029-53b4e3588c54 replay_id=64295731200 payload_len=1350
+[2025-10-23T12:40:25.202Z] Processing event: schema_id=z9COVj5aaSSHgVbCj62Qhg event_id=02b05d0f-4bec-4cb4-bd77-b544b7648195 replay_id=64313098240 payload_len=215
+[2025-10-23T12:40:25.204Z] Fetched 16 events from topic /event/Task_Delete__e
+[2025-10-23T12:40:25.205Z] Closed Pub/Sub API connection
+[2025-10-23T12:40:25.207Z] ================================================================================
+[2025-10-23T12:40:25.208Z] RETURNED from fetch_events_via_pubsub
+[2025-10-23T12:40:25.209Z]   - events type: list
+[2025-10-23T12:40:25.211Z]   - events count: 16
+[2025-10-23T12:40:25.212Z]   - first event keys: ['topic', 'replay_id', 'event_id', 'schema_id', 'payload', 'latest_replay_id']
+[2025-10-23T12:40:25.213Z] ================================================================================
+[2025-10-23T12:40:25.215Z] Fetched 16 events from topic /event/Task_Delete__e
+[2025-10-23T12:40:25.238Z] Saved 79 events to data\events_20251023T124025Z.db
+[2025-10-23T12:40:25.293Z] Request URL: 'https://boibdinsightstprod.blob.core.windows.net/sf-delete-tracker?restype=REDACTED'
+Request method: 'GET'
+Request headers:
+    'x-ms-version': 'REDACTED'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.23.1 Python/3.11.0 (Windows-10-10.0.26100-SP0)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': '72a45990-b00d-11f0-ad1c-6045bdaab30b'
+    'Authorization': 'REDACTED'
+No body was attached to the request
+[2025-10-23T12:40:26.456Z] Response status: 403
+Response headers:
+    'Content-Length': '246'
+    'Content-Type': 'application/xml'
+    'Server': 'Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '61e015a0-201e-0016-6c1a-4428af000000'
+    'x-ms-client-request-id': '72a45990-b00d-11f0-ad1c-6045bdaab30b'
+    'x-ms-error-code': 'AuthorizationFailure'
+    'Date': 'Thu, 23 Oct 2025 12:40:26 GMT'
+[2025-10-23T12:40:26.515Z] Executed 'Functions.TimerPoller' (Failed, Id=f0711ede-14a0-4824-a596-35e60fc13b9a, Duration=221234ms)
+[2025-10-23T12:40:26.517Z] System.Private.CoreLib: Exception while executing function: Functions.TimerPoller. System.Private.CoreLib: Result: Failure
+Exception: HttpResponseError: This request is not authorized to perform this operation.
+RequestId:61e015a0-201e-0016-6c1a-4428af000000
+Time:2025-10-23T12:40:26.3034555Z
+ErrorCode:AuthorizationFailure
+Content: <?xml version="1.0" encoding="utf-8"?><Error><Code>AuthorizationFailure</Code><Message>This request is not authorized to perform this operation.
+RequestId:61e015a0-201e-0016-6c1a-4428af000000
+Time:2025-10-23T12:40:26.3034555Z</Message></Error>
+Stack:   File "C:\Program Files\Microsoft\Azure Functions Core Tools\workers\python\3.11\WINDOWS\X64\azure_functions_worker\dispatcher.py", line 676, in _handle__invocation_request
+    call_result = await self._loop.run_in_executor(
+  File "C:\Program Files\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Program Files\Microsoft\Azure Functions Core Tools\workers\python\3.11\WINDOWS\X64\azure_functions_worker\dispatcher.py", line 1006, in _run_sync_func
+    return ExtensionManager.get_sync_invocation_wrapper(context,
+  File "C:\Program Files\Microsoft\Azure Functions Core Tools\workers\python\3.11\WINDOWS\X64\azure_functions_worker\extension.py", line 211, in _raw_invocation_wrapper
+    result = function(**args)
+  File "C:\Users\pradeep.verma\OneDrive - BLUE OWL\bodev\delete_synchronizer\salesforce_client\TimerPoller\__init__.py", line 110, in main
+    upload_file(settings.azure_storage_connection_string, settings.azure_blob_container, db_path, blob_name)        
+  File "C:\Users\pradeep.verma\OneDrive - BLUE OWL\bodev\delete_synchronizer\salesforce_client\src\app\storage\azure_blob.py", line 29, in upload_file
+    print("Container exists:", service.get_container_client(container).exists())
+  File "C:\Users\pradeep.verma\OneDrive - BLUE OWL\bodev\delete_synchronizer\salesforce_client\.venv\Lib\site-packages\azure\core\tracing\decorator.py", line 119, in wrapper_use_tracer
+    return func(*args, **kwargs)
+  File "C:\Users\pradeep.verma\OneDrive - BLUE OWL\bodev\delete_synchronizer\salesforce_client\.venv\Lib\site-packages\azure\storage\blob\_container_client.py", line 554, in exists
+    process_storage_error(error)
+  File "C:\Users\pradeep.verma\OneDrive - BLUE OWL\bodev\delete_synchronizer\salesforce_client\.venv\Lib\site-packages\azure\storage\blob\_shared\response_handlers.py", line 186, in process_storage_error
+    exec("raise error from None")   # pylint: disable=exec-used # nosec
+  File "<string>", line 1, in <module>
+.
+[2025-10-23T12:40:47.400Z] The listener for function 'Functions.TimerPoller' was unable to start.
+[2025-10-23T12:40:47.401Z] The listener for function 'Functions.TimerPoller' was unable to start. Azure.Storage.Blobs: Service request failed.
+[2025-10-23T12:40:47.403Z] Status: 403 (This request is not authorized to perform this operation.)
+[2025-10-23T12:40:47.404Z] ErrorCode: AuthorizationFailure
+[2025-10-23T12:40:47.405Z]
+[2025-10-23T12:40:47.406Z] Headers:
+[2025-10-23T12:40:47.407Z] Transfer-Encoding: chunked
+[2025-10-23T12:40:47.408Z] Server: Microsoft-HTTPAPI/2.0
+[2025-10-23T12:40:47.409Z] x-ms-request-id: d0bd58ea-901e-0071-551a-443853000000
+[2025-10-23T12:40:47.412Z] x-ms-client-request-id: 8ab7b766-8476-42b8-adf2-4712cd847973
+[2025-10-23T12:40:47.414Z] x-ms-error-code: AuthorizationFailure
+[2025-10-23T12:40:47.416Z] Date: Thu, 23 Oct 2025 12:40:46 GMT
+[2025-10-23T12:40:47.419Z] .
