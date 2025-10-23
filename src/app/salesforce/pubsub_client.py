@@ -2,11 +2,11 @@ from __future__ import annotations
 
 import logging
 import grpc
-import avro.io
-import avro.schema
 import io
 import json
+import requests
 from typing import Dict, List, Optional, Iterator
+from fastavro import schemaless_reader
 
 from src.app.salesforce.proto import pubsub_api_pb2 as pb2
 from src.app.salesforce.proto import pubsub_api_pb2_grpc as pb2_grpc
@@ -54,14 +54,40 @@ class PubSubClient:
         logging.info("Retrieved topic info for %s: schema_id=%s", topic_name, response.schema_id)
         return response
 
-    def get_schema(self, schema_id: str) -> dict:
-        """Get Avro schema for a given schema ID"""
-        request = pb2.SchemaRequest(schema_id=schema_id)
-        metadata = self._get_metadata()
-        response = self.stub.GetSchema(request, metadata=metadata)
-        schema_dict = json.loads(response.schema_json)
-        logging.info("Retrieved schema for schema_id=%s", schema_id)
-        return schema_dict
+    def fetch_avro_schema_via_rest(self, schema_id: str) -> dict:
+        """
+        Fetch the Avro schema (COMPACT) for a platform event via REST API.
+        Uses same approach as continuous mode for compatibility.
+        """
+        headers = {
+            "Authorization": f"Bearer {self.access_token}",
+            "Content-Type": "application/json",
+        }
+
+        # Try multiple API versions (same as continuous mode)
+        versions = ["64.0", "61.0", "59.0", "57.0"]
+        last_err = None
+
+        for v in versions:
+            url = f"{self.instance_url}/services/data/v{v}/event/eventSchema/{schema_id}?payloadFormat=COMPACT"
+            try:
+                resp = requests.get(url, headers=headers, timeout=30)
+                logging.info("Avro schema GET %s -> %s", url, resp.status_code)
+                resp.raise_for_status()
+                data = resp.json()
+
+                # Some responses wrap the actual Avro schema under "schema"; normalize both cases
+                schema = data.get("schema", data)
+                if not isinstance(schema, dict):
+                    raise ValueError(f"Unexpected schema shape from {url}: {type(schema)}")
+                logging.info("Retrieved schema for schema_id=%s via REST", schema_id)
+                return schema
+            except requests.RequestException as e:
+                logging.warning("Schema fetch attempt failed on %s: %s", url, e)
+                last_err = e
+                continue
+
+        raise RuntimeError(f"Failed to fetch schema for ID {schema_id}: {last_err}")
 
     def subscribe_to_events(
         self,
@@ -83,10 +109,13 @@ class PubSubClient:
         if not self.stub:
             raise RuntimeError("Client not connected. Call connect() first.")
 
-        # Get topic info and schema
+        # Get topic info to retrieve schema_id
         topic_info = self.get_topic_info(topic_name)
-        schema_dict = self.get_schema(topic_info.schema_id)
-        avro_schema = avro.schema.parse(json.dumps(schema_dict))
+        schema_id = topic_info.schema_id
+        
+        # Fetch schema via REST API (same as continuous mode)
+        schema_dict = self.fetch_avro_schema_via_rest(schema_id)
+        logging.info("Using schema for decoding: %s", schema_id)
 
         # Prepare initial fetch request
         if replay_id:
@@ -96,7 +125,8 @@ class PubSubClient:
                 replay_id=replay_id,
                 num_requested=num_requested,
             )
-            logging.info("Subscribing to %s from replay_id (CUSTOM)", topic_name)
+            replay_id_int = int.from_bytes(replay_id, byteorder="big", signed=False)
+            logging.info("Subscribing to %s from replay_id=%s (CUSTOM)", topic_name, replay_id_int)
         else:
             fetch_request = pb2.FetchRequest(
                 topic_name=topic_name,
@@ -117,27 +147,45 @@ class PubSubClient:
             for fetch_response in response_stream:
                 latest_replay_id = fetch_response.latest_replay_id
 
-                if not fetch_response.events:
+                if not getattr(fetch_response, "events", None):
                     logging.info("No events in this batch (keepalive or empty response)")
                     # No events, exit the stream
                     break
 
-                logging.info("Received batch with %d events from %s", len(fetch_response.events), topic_name)
+                logging.info("Received batch of %d event(s) from %s", len(fetch_response.events), topic_name)
 
-                for consumer_event in fetch_response.events:
-                    # Decode Avro payload
-                    payload_bytes = consumer_event.event.payload
-                    bytes_reader = io.BytesIO(payload_bytes)
-                    decoder = avro.io.BinaryDecoder(bytes_reader)
-                    reader = avro.io.DatumReader(avro_schema)
-                    decoded_payload = reader.read(decoder)
+                for ev in fetch_response.events:
+                    # Defensive event access (same as continuous mode)
+                    nested = getattr(ev, "event", None)
+                    if not nested or not nested.payload:
+                        logging.warning("No ev.event.payload; skipping event.")
+                        continue
+
+                    payload_bytes: bytes = nested.payload
+                    event_schema_id: str = nested.schema_id
+                    event_id: str = nested.id
+                    replay_id_bytes: bytes = ev.replay_id
+                    replay_id_int = int.from_bytes(replay_id_bytes, byteorder="big", signed=False)
+
+                    logging.info(
+                        "Processing event: schema_id=%s event_id=%s replay_id=%s payload_len=%d",
+                        event_schema_id, event_id, replay_id_int, len(payload_bytes)
+                    )
+
+                    # Decode Avro payload using fastavro (same as continuous mode)
+                    try:
+                        decoded_payload = schemaless_reader(io.BytesIO(payload_bytes), schema_dict)
+                        logging.debug("Decoded event keys: %s", list(decoded_payload.keys()))
+                    except Exception as decode_error:
+                        logging.error("Failed to decode event %s: %s", event_id, decode_error)
+                        continue
 
                     # Yield event with metadata
                     yield {
                         "topic": topic_name,
-                        "replay_id": consumer_event.replay_id,
-                        "event_id": consumer_event.event.id,
-                        "schema_id": consumer_event.event.schema_id,
+                        "replay_id": replay_id_bytes,  # Keep as bytes for storage
+                        "event_id": event_id,
+                        "schema_id": event_schema_id,
                         "payload": decoded_payload,
                         "latest_replay_id": latest_replay_id,
                     }
@@ -146,7 +194,11 @@ class PubSubClient:
                 break
 
         except grpc.RpcError as e:
-            logging.error("gRPC error during subscription: %s", e)
+            logging.error("gRPC error during subscription: %s - %s", e.code(), e.details())
+            # Log trailing metadata for debugging (same as continuous mode)
+            tr = list(e.trailing_metadata() or [])
+            if tr:
+                logging.error("gRPC trailers: %s", tr)
             raise
 
 
