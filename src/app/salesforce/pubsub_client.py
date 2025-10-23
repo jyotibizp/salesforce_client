@@ -100,10 +100,10 @@ class PubSubClient:
         else:
             fetch_request = pb2.FetchRequest(
                 topic_name=topic_name,
-                replay_preset=pb2.ReplayPreset.LATEST,
+                replay_preset=pb2.ReplayPreset.EARLIEST,
                 num_requested=num_requested,
             )
-            logging.info("Subscribing to %s from LATEST", topic_name)
+            logging.info("Subscribing to %s from EARLIEST (first run)", topic_name)
 
         metadata = self._get_metadata()
 
@@ -118,11 +118,11 @@ class PubSubClient:
                 latest_replay_id = fetch_response.latest_replay_id
 
                 if not fetch_response.events:
-                    logging.info("Received keepalive with latest_replay_id")
+                    logging.info("No events in this batch (keepalive or empty response)")
                     # No events, exit the stream
                     break
 
-                logging.info("Received %d events", len(fetch_response.events))
+                logging.info("Received batch with %d events from %s", len(fetch_response.events), topic_name)
 
                 for consumer_event in fetch_response.events:
                     # Decode Avro payload

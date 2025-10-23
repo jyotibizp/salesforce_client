@@ -44,6 +44,11 @@ def main(myTimer: func.TimerRequest) -> None:
     # Subscribe to each topic via Pub/Sub API or use mock data
     for topic in settings.sf_topic_names:
         replay_id = cursor_store.get(topic)
+        
+        if replay_id:
+            logging.info("Found existing replay_id for topic %s (length: %d bytes)", topic, len(replay_id))
+        else:
+            logging.info("No replay_id found for topic %s - will fetch from EARLIEST", topic)
 
         try:
             if settings.mock_mode:
@@ -93,7 +98,7 @@ def main(myTimer: func.TimerRequest) -> None:
     # Update cursors with latest replay IDs
     for topic, replay_id in latest_per_topic.items():
         cursor_store.set(topic, replay_id)
-        logging.info("Updated replay_id for topic %s", topic)
+        logging.info("Saved replay_id for topic %s (length: %d bytes)", topic, len(replay_id))
 
     logging.info("Salesforce Pub/Sub poller function completed at %s", datetime.datetime.utcnow().isoformat())
 
