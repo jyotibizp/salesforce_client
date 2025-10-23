@@ -1,0 +1,331 @@
+ func start
+local.settings.json found in root directory (C:\Users\pradeep.verma\OneDrive - BLUE OWL\bodev\delete_synchronizer\salesforce_client).
+Resolving worker runtime to 'python'.
+Found Python version 3.11.0 (python).
+
+
+Azure Functions Core Tools
+Core Tools Version:       4.3.0+df07acf9d837d635d1efc2c973225f4f1c8a4333 (64-bit)
+Function Runtime Version: 4.1042.100.25374
+
+[2025-10-23T11:52:24.389Z] Worker process started and initialized.
+
+Functions:
+
+        TimerPoller: timerTrigger
+
+For detailed output, run func with --verbose flag.
+[2025-10-23T11:53:02.996Z] The listener for function 'Functions.TimerPoller' was unable to start.
+[2025-10-23T11:53:02.997Z] The listener for function 'Functions.TimerPoller' was unable to start. Azure.Core: Retry failed after 6 tries. Retry settings can be adjusted in ClientOptions.Retry or by configuring a custom retry policy in ClientOptions.RetryPolicy. (No connection could be made because the target machine actively refused it. (127.0.0.1:10000)) (No connection could be made because the target machine actively refused it. (127.0.0.1:10000)) (No connection could be made because the target machine actively refused it. (127.0.0.1:10000)) (No connection could be made because the target machine actively refused it. (127.0.0.1:10000)) (No connection could be made because the target machine actively refused it. (127.0.0.1:10000)) (No connection could be made because the target machine actively refused it. (127.0.0.1:10000)). Azure.Core: No connection could be made because the target machine actively refused it. (127.0.0.1:10000). System.Net.Http: No connection could be made because the target machine actively refused it. (127.0.0.1:10000). System.Net.Sockets: No connection could be made because the target machine actively refused it.       
+[2025-10-23T11:53:33.497Z] Executing 'Functions.TimerPoller' (Reason='This function was programmatically called via the host APIs.', Id=c6a97a16-30c3-4009-8704-0694b7462726)
+[2025-10-23T11:53:33.550Z] Salesforce Pub/Sub poller function started at 2025-10-23T11:53:33.538724+00:00
+[2025-10-23T11:53:34.846Z] Authenticated to Salesforce - Org ID: 00D3t000005us1xEAA
+[2025-10-23T11:53:34.851Z] No replay_id found for topic /event/Account_Delete__e - will fetch from EARLIEST
+[2025-10-23T11:53:34.853Z] Starting new subscription to /event/Account_Delete__e (no replay_id, will use EARLIEST)  
+[2025-10-23T11:53:34.854Z] ================================================================================
+[2025-10-23T11:53:34.856Z] CALLING fetch_events_via_pubsub for topic: /event/Account_Delete__e
+[2025-10-23T11:53:34.857Z]   - access_token: Present (112 chars)
+[2025-10-23T11:53:34.858Z]   - instance_url: https://blueowlcrm.my.salesforce.com
+[2025-10-23T11:53:34.860Z]   - tenant_id: 00D3t000005us1xEAA
+[2025-10-23T11:53:34.863Z]   - replay_id: None
+[2025-10-23T11:53:34.865Z]   - max_events: 100
+[2025-10-23T11:53:34.866Z] ================================================================================
+[2025-10-23T11:53:34.868Z] Connecting to Pub/Sub API at api.pubsub.salesforce.com:7443
+[2025-10-23T11:53:34.870Z] Using tenant_id: 00D3t000005us1xEAA
+[2025-10-23T11:53:34.872Z] Using instance_url: https://blueowlcrm.my.salesforce.com
+[2025-10-23T11:53:34.873Z] Access token length: 112 chars
+[2025-10-23T11:53:34.875Z] ✓ Connected to Salesforce Pub/Sub API at api.pubsub.salesforce.com:7443
+[2025-10-23T11:53:36.448Z] Retrieved topic info for /event/Account_Delete__e: schema_id=vEQOSfwVduZCT6X9tyDT5g
+[2025-10-23T11:53:37.578Z] Avro schema GET https://blueowlcrm.my.salesforce.com/services/data/v64.0/event/eventSchema/vEQOSfwVduZCT6X9tyDT5g?payloadFormat=COMPACT -> 200
+[2025-10-23T11:53:37.579Z] Retrieved schema for schema_id=vEQOSfwVduZCT6X9tyDT5g via REST
+[2025-10-23T11:53:37.581Z] Using schema for decoding: vEQOSfwVduZCT6X9tyDT5g
+[2025-10-23T11:53:37.582Z] Subscribing to /event/Account_Delete__e from EARLIEST (first run)
+[2025-10-23T11:53:37.583Z] Starting Subscribe RPC call for /event/Account_Delete__e...
+[2025-10-23T11:53:37.585Z] Subscribe RPC call established, waiting for response...
+[2025-10-23T11:53:37.897Z] Fetched 0 events from topic /event/Account_Delete__e
+[2025-10-23T11:53:37.899Z] Closed Pub/Sub API connection
+[2025-10-23T11:53:37.901Z] ================================================================================
+[2025-10-23T11:53:37.902Z] RETURNED from fetch_events_via_pubsub
+[2025-10-23T11:53:37.904Z]   - events type: list
+[2025-10-23T11:53:37.905Z]   - events count: 0
+[2025-10-23T11:53:37.906Z] ================================================================================
+[2025-10-23T11:53:37.907Z] Fetched 0 events from topic /event/Account_Delete__e
+[2025-10-23T11:53:37.909Z] No replay_id found for topic /event/Activity_Content_Delete__e - will fetch from EARLIEST
+[2025-10-23T11:53:37.910Z] Starting new subscription to /event/Activity_Content_Delete__e (no replay_id, will use EARLIEST)
+[2025-10-23T11:53:37.913Z] ================================================================================
+[2025-10-23T11:53:37.915Z] CALLING fetch_events_via_pubsub for topic: /event/Activity_Content_Delete__e
+[2025-10-23T11:53:37.917Z]   - access_token: Present (112 chars)
+[2025-10-23T11:53:37.919Z]   - instance_url: https://blueowlcrm.my.salesforce.com
+[2025-10-23T11:53:37.920Z]   - tenant_id: 00D3t000005us1xEAA
+[2025-10-23T11:53:37.921Z]   - replay_id: None
+[2025-10-23T11:53:37.923Z]   - max_events: 100
+[2025-10-23T11:53:37.924Z] ================================================================================
+[2025-10-23T11:53:37.925Z] Connecting to Pub/Sub API at api.pubsub.salesforce.com:7443
+[2025-10-23T11:53:37.926Z] Using tenant_id: 00D3t000005us1xEAA
+[2025-10-23T11:53:37.928Z] Using instance_url: https://blueowlcrm.my.salesforce.com
+[2025-10-23T11:53:37.929Z] Access token length: 112 chars
+[2025-10-23T11:53:37.932Z] ✓ Connected to Salesforce Pub/Sub API at api.pubsub.salesforce.com:7443
+[2025-10-23T11:53:39.200Z] Retrieved topic info for /event/Activity_Content_Delete__e: schema_id=IrC81ehT2VlakxuZYSaecQ
+[2025-10-23T11:53:39.950Z] Avro schema GET https://blueowlcrm.my.salesforce.com/services/data/v64.0/event/eventSchema/IrC81ehT2VlakxuZYSaecQ?payloadFormat=COMPACT -> 200
+[2025-10-23T11:53:39.951Z] Retrieved schema for schema_id=IrC81ehT2VlakxuZYSaecQ via REST
+[2025-10-23T11:53:39.953Z] Using schema for decoding: IrC81ehT2VlakxuZYSaecQ
+[2025-10-23T11:53:39.954Z] Subscribing to /event/Activity_Content_Delete__e from EARLIEST (first run)
+[2025-10-23T11:53:39.955Z] Starting Subscribe RPC call for /event/Activity_Content_Delete__e...
+[2025-10-23T11:53:39.956Z] Subscribe RPC call established, waiting for response...
+[2025-10-23T11:53:40.269Z] Fetched 0 events from topic /event/Activity_Content_Delete__e
+[2025-10-23T11:53:40.271Z] Closed Pub/Sub API connection
+[2025-10-23T11:53:40.273Z] ================================================================================
+[2025-10-23T11:53:40.274Z] RETURNED from fetch_events_via_pubsub
+[2025-10-23T11:53:40.275Z]   - events type: list
+[2025-10-23T11:53:40.277Z]   - events count: 0
+[2025-10-23T11:53:40.278Z] ================================================================================
+[2025-10-23T11:53:40.279Z] Fetched 0 events from topic /event/Activity_Content_Delete__e
+[2025-10-23T11:53:40.280Z] No replay_id found for topic /event/Contact_Delete__e - will fetch from EARLIEST
+[2025-10-23T11:53:40.282Z] Starting new subscription to /event/Contact_Delete__e (no replay_id, will use EARLIEST)  
+[2025-10-23T11:53:40.284Z] ================================================================================
+[2025-10-23T11:53:40.287Z] CALLING fetch_events_via_pubsub for topic: /event/Contact_Delete__e
+[2025-10-23T11:53:40.288Z]   - access_token: Present (112 chars)
+[2025-10-23T11:53:40.290Z]   - instance_url: https://blueowlcrm.my.salesforce.com
+[2025-10-23T11:53:40.291Z]   - tenant_id: 00D3t000005us1xEAA
+[2025-10-23T11:53:40.293Z]   - replay_id: None
+[2025-10-23T11:53:40.294Z]   - max_events: 100
+[2025-10-23T11:53:40.295Z] ================================================================================
+[2025-10-23T11:53:40.296Z] Connecting to Pub/Sub API at api.pubsub.salesforce.com:7443
+[2025-10-23T11:53:40.298Z] Using tenant_id: 00D3t000005us1xEAA
+[2025-10-23T11:53:40.299Z] Using instance_url: https://blueowlcrm.my.salesforce.com
+[2025-10-23T11:53:40.300Z] Access token length: 112 chars
+[2025-10-23T11:53:40.301Z] ✓ Connected to Salesforce Pub/Sub API at api.pubsub.salesforce.com:7443
+[2025-10-23T11:53:41.611Z] Retrieved topic info for /event/Contact_Delete__e: schema_id=MXWHgpzF_NjbjwbgY8fUCg
+[2025-10-23T11:53:41.951Z] The listener for function 'Functions.TimerPoller' was unable to start.
+[2025-10-23T11:53:41.952Z] The listener for function 'Functions.TimerPoller' was unable to start. Azure.Core: Retry failed after 6 tries. Retry settings can be adjusted in ClientOptions.Retry or by configuring a custom retry policy in ClientOptions.RetryPolicy. (No connection could be made because the target machine actively refused it. (127.0.0.1:10000)) (No connection could be made because the target machine actively refused it. (127.0.0.1:10000)) (No connection could be made because the target machine actively refused it. (127.0.0.1:10000)) (No connection could be made because the target machine actively refused it. (127.0.0.1:10000)) (No connection could be made because the target machine actively refused it. (127.0.0.1:10000)) (No connection could be made because the target machine actively refused it. (127.0.0.1:10000)). Azure.Core: No connection could be made because the target machine actively refused it. (127.0.0.1:10000). System.Net.Http: No connection could be made because the target machine actively refused it. (127.0.0.1:10000). System.Net.Sockets: No connection could be made because the target machine actively refused it.       
+[2025-10-23T11:53:42.504Z] Avro schema GET https://blueowlcrm.my.salesforce.com/services/data/v64.0/event/eventSchema/MXWHgpzF_NjbjwbgY8fUCg?payloadFormat=COMPACT -> 200
+[2025-10-23T11:53:42.506Z] Retrieved schema for schema_id=MXWHgpzF_NjbjwbgY8fUCg via REST
+[2025-10-23T11:53:42.507Z] Using schema for decoding: MXWHgpzF_NjbjwbgY8fUCg
+[2025-10-23T11:53:42.509Z] Subscribing to /event/Contact_Delete__e from EARLIEST (first run)
+[2025-10-23T11:53:42.510Z] Starting Subscribe RPC call for /event/Contact_Delete__e...
+[2025-10-23T11:53:42.511Z] Subscribe RPC call established, waiting for response...
+[2025-10-23T11:53:42.828Z] Fetched 0 events from topic /event/Contact_Delete__e
+[2025-10-23T11:53:42.830Z] Closed Pub/Sub API connection
+[2025-10-23T11:53:42.831Z] ================================================================================
+[2025-10-23T11:53:42.833Z] RETURNED from fetch_events_via_pubsub
+[2025-10-23T11:53:42.834Z]   - events type: list
+[2025-10-23T11:53:42.835Z]   - events count: 0
+[2025-10-23T11:53:42.837Z] ================================================================================
+[2025-10-23T11:53:42.838Z] Fetched 0 events from topic /event/Contact_Delete__e
+[2025-10-23T11:53:42.840Z] No replay_id found for topic /event/Event_Delete__e - will fetch from EARLIEST
+[2025-10-23T11:53:42.842Z] Starting new subscription to /event/Event_Delete__e (no replay_id, will use EARLIEST)    
+[2025-10-23T11:53:42.844Z] ================================================================================
+[2025-10-23T11:53:42.846Z] CALLING fetch_events_via_pubsub for topic: /event/Event_Delete__e
+[2025-10-23T11:53:42.848Z]   - access_token: Present (112 chars)
+[2025-10-23T11:53:42.850Z]   - instance_url: https://blueowlcrm.my.salesforce.com
+[2025-10-23T11:53:42.852Z]   - tenant_id: 00D3t000005us1xEAA
+[2025-10-23T11:53:42.853Z]   - replay_id: None
+[2025-10-23T11:53:42.854Z]   - max_events: 100
+[2025-10-23T11:53:42.855Z] ================================================================================
+[2025-10-23T11:53:42.857Z] Connecting to Pub/Sub API at api.pubsub.salesforce.com:7443
+[2025-10-23T11:53:42.858Z] Using tenant_id: 00D3t000005us1xEAA
+[2025-10-23T11:53:42.859Z] Using instance_url: https://blueowlcrm.my.salesforce.com
+[2025-10-23T11:53:42.860Z] Access token length: 112 chars
+[2025-10-23T11:53:42.861Z] ✓ Connected to Salesforce Pub/Sub API at api.pubsub.salesforce.com:7443
+[2025-10-23T11:53:44.117Z] Retrieved topic info for /event/Event_Delete__e: schema_id=ZakJ8AFcyQd6TLaz_GUXxw
+[2025-10-23T11:53:45.059Z] Avro schema GET https://blueowlcrm.my.salesforce.com/services/data/v64.0/event/eventSchema/ZakJ8AFcyQd6TLaz_GUXxw?payloadFormat=COMPACT -> 200
+[2025-10-23T11:53:45.060Z] Retrieved schema for schema_id=ZakJ8AFcyQd6TLaz_GUXxw via REST
+[2025-10-23T11:53:45.062Z] Using schema for decoding: ZakJ8AFcyQd6TLaz_GUXxw
+[2025-10-23T11:53:45.063Z] Subscribing to /event/Event_Delete__e from EARLIEST (first run)
+[2025-10-23T11:53:45.064Z] Starting Subscribe RPC call for /event/Event_Delete__e...
+[2025-10-23T11:53:45.065Z] Subscribe RPC call established, waiting for response...
+[2025-10-23T11:53:45.337Z] Fetched 0 events from topic /event/Event_Delete__e
+[2025-10-23T11:53:45.339Z] Closed Pub/Sub API connection
+[2025-10-23T11:53:45.341Z] ================================================================================
+[2025-10-23T11:53:45.342Z] RETURNED from fetch_events_via_pubsub
+[2025-10-23T11:53:45.343Z]   - events type: list
+[2025-10-23T11:53:45.345Z]   - events count: 0
+[2025-10-23T11:53:45.346Z] ================================================================================
+[2025-10-23T11:53:45.347Z] Fetched 0 events from topic /event/Event_Delete__e
+[2025-10-23T11:53:45.348Z] No replay_id found for topic /event/Fund_Delete__e - will fetch from EARLIEST
+[2025-10-23T11:53:45.350Z] Starting new subscription to /event/Fund_Delete__e (no replay_id, will use EARLIEST)     
+[2025-10-23T11:53:45.351Z] ================================================================================
+[2025-10-23T11:53:45.352Z] CALLING fetch_events_via_pubsub for topic: /event/Fund_Delete__e
+[2025-10-23T11:53:45.353Z]   - access_token: Present (112 chars)
+[2025-10-23T11:53:45.354Z]   - instance_url: https://blueowlcrm.my.salesforce.com
+[2025-10-23T11:53:45.355Z]   - tenant_id: 00D3t000005us1xEAA
+[2025-10-23T11:53:45.357Z]   - replay_id: None
+[2025-10-23T11:53:45.358Z]   - max_events: 100
+[2025-10-23T11:53:45.359Z] ================================================================================
+[2025-10-23T11:53:45.361Z] Connecting to Pub/Sub API at api.pubsub.salesforce.com:7443
+[2025-10-23T11:53:45.362Z] Using tenant_id: 00D3t000005us1xEAA
+[2025-10-23T11:53:45.363Z] Using instance_url: https://blueowlcrm.my.salesforce.com
+[2025-10-23T11:53:45.364Z] Access token length: 112 chars
+[2025-10-23T11:53:45.365Z] ✓ Connected to Salesforce Pub/Sub API at api.pubsub.salesforce.com:7443
+[2025-10-23T11:53:46.585Z] Retrieved topic info for /event/Fund_Delete__e: schema_id=EaYyWjay095xtt1zP8Fi2Q
+[2025-10-23T11:53:47.384Z] Avro schema GET https://blueowlcrm.my.salesforce.com/services/data/v64.0/event/eventSchema/EaYyWjay095xtt1zP8Fi2Q?payloadFormat=COMPACT -> 200
+[2025-10-23T11:53:47.385Z] Retrieved schema for schema_id=EaYyWjay095xtt1zP8Fi2Q via REST
+[2025-10-23T11:53:47.387Z] Using schema for decoding: EaYyWjay095xtt1zP8Fi2Q
+[2025-10-23T11:53:47.388Z] Subscribing to /event/Fund_Delete__e from EARLIEST (first run)
+[2025-10-23T11:53:47.389Z] Starting Subscribe RPC call for /event/Fund_Delete__e...
+[2025-10-23T11:53:47.391Z] Subscribe RPC call established, waiting for response...
+[2025-10-23T11:53:47.698Z] Fetched 0 events from topic /event/Fund_Delete__e
+[2025-10-23T11:53:47.700Z] Closed Pub/Sub API connection
+[2025-10-23T11:53:47.701Z] ================================================================================
+[2025-10-23T11:53:47.703Z] RETURNED from fetch_events_via_pubsub
+[2025-10-23T11:53:47.704Z]   - events type: list
+[2025-10-23T11:53:47.705Z]   - events count: 0
+[2025-10-23T11:53:47.706Z] ================================================================================
+[2025-10-23T11:53:47.708Z] Fetched 0 events from topic /event/Fund_Delete__e
+[2025-10-23T11:53:47.709Z] No replay_id found for topic /event/Investments_Delete__e - will fetch from EARLIEST
+[2025-10-23T11:53:47.712Z] Starting new subscription to /event/Investments_Delete__e (no replay_id, will use EARLIEST)
+[2025-10-23T11:53:47.713Z] ================================================================================
+[2025-10-23T11:53:47.715Z] CALLING fetch_events_via_pubsub for topic: /event/Investments_Delete__e
+[2025-10-23T11:53:47.717Z]   - access_token: Present (112 chars)
+[2025-10-23T11:53:47.718Z]   - instance_url: https://blueowlcrm.my.salesforce.com
+[2025-10-23T11:53:47.720Z]   - tenant_id: 00D3t000005us1xEAA
+[2025-10-23T11:53:47.721Z]   - replay_id: None
+[2025-10-23T11:53:47.722Z]   - max_events: 100
+[2025-10-23T11:53:47.723Z] ================================================================================
+[2025-10-23T11:53:47.725Z] Connecting to Pub/Sub API at api.pubsub.salesforce.com:7443
+[2025-10-23T11:53:47.726Z] Using tenant_id: 00D3t000005us1xEAA
+[2025-10-23T11:53:47.727Z] Using instance_url: https://blueowlcrm.my.salesforce.com
+[2025-10-23T11:53:47.728Z] Access token length: 112 chars
+[2025-10-23T11:53:47.730Z] ✓ Connected to Salesforce Pub/Sub API at api.pubsub.salesforce.com:7443
+[2025-10-23T11:53:49.002Z] Retrieved topic info for /event/Investments_Delete__e: schema_id=gmquS1Mxos-T_bPxYCSlxg
+[2025-10-23T11:53:49.927Z] Avro schema GET https://blueowlcrm.my.salesforce.com/services/data/v64.0/event/eventSchema/gmquS1Mxos-T_bPxYCSlxg?payloadFormat=COMPACT -> 200
+[2025-10-23T11:53:49.929Z] Retrieved schema for schema_id=gmquS1Mxos-T_bPxYCSlxg via REST
+[2025-10-23T11:53:49.930Z] Using schema for decoding: gmquS1Mxos-T_bPxYCSlxg
+[2025-10-23T11:53:49.932Z] Subscribing to /event/Investments_Delete__e from EARLIEST (first run)
+[2025-10-23T11:53:49.933Z] Starting Subscribe RPC call for /event/Investments_Delete__e...
+[2025-10-23T11:53:49.934Z] Subscribe RPC call established, waiting for response...
+[2025-10-23T11:53:50.254Z] Fetched 0 events from topic /event/Investments_Delete__e
+[2025-10-23T11:53:50.256Z] Closed Pub/Sub API connection
+[2025-10-23T11:53:50.257Z] ================================================================================
+[2025-10-23T11:53:50.259Z] RETURNED from fetch_events_via_pubsub
+[2025-10-23T11:53:50.260Z]   - events type: list
+[2025-10-23T11:53:50.261Z]   - events count: 0
+[2025-10-23T11:53:50.263Z] ================================================================================
+[2025-10-23T11:53:50.265Z] Fetched 0 events from topic /event/Investments_Delete__e
+[2025-10-23T11:53:50.266Z] No replay_id found for topic /event/Legal_Entity_Delete__e - will fetch from EARLIEST    
+[2025-10-23T11:53:50.268Z] Starting new subscription to /event/Legal_Entity_Delete__e (no replay_id, will use EARLIEST)
+[2025-10-23T11:53:50.271Z] ================================================================================
+[2025-10-23T11:53:50.272Z] CALLING fetch_events_via_pubsub for topic: /event/Legal_Entity_Delete__e
+[2025-10-23T11:53:50.274Z]   - access_token: Present (112 chars)
+[2025-10-23T11:53:50.276Z]   - instance_url: https://blueowlcrm.my.salesforce.com
+[2025-10-23T11:53:50.278Z]   - tenant_id: 00D3t000005us1xEAA
+[2025-10-23T11:53:50.279Z]   - replay_id: None
+[2025-10-23T11:53:50.281Z]   - max_events: 100
+[2025-10-23T11:53:50.282Z] ================================================================================
+[2025-10-23T11:53:50.283Z] Connecting to Pub/Sub API at api.pubsub.salesforce.com:7443
+[2025-10-23T11:53:50.284Z] Using tenant_id: 00D3t000005us1xEAA
+[2025-10-23T11:53:50.285Z] Using instance_url: https://blueowlcrm.my.salesforce.com
+[2025-10-23T11:53:50.287Z] Access token length: 112 chars
+[2025-10-23T11:53:50.288Z] ✓ Connected to Salesforce Pub/Sub API at api.pubsub.salesforce.com:7443
+[2025-10-23T11:53:51.360Z] Retrieved topic info for /event/Legal_Entity_Delete__e: schema_id=v_dJr8a6ZgMHIKtcGPnxDQ
+[2025-10-23T11:53:52.252Z] Avro schema GET https://blueowlcrm.my.salesforce.com/services/data/v64.0/event/eventSchema/v_dJr8a6ZgMHIKtcGPnxDQ?payloadFormat=COMPACT -> 200
+[2025-10-23T11:53:52.254Z] Retrieved schema for schema_id=v_dJr8a6ZgMHIKtcGPnxDQ via REST
+[2025-10-23T11:53:52.255Z] Using schema for decoding: v_dJr8a6ZgMHIKtcGPnxDQ
+[2025-10-23T11:53:52.256Z] Subscribing to /event/Legal_Entity_Delete__e from EARLIEST (first run)
+[2025-10-23T11:53:52.258Z] Starting Subscribe RPC call for /event/Legal_Entity_Delete__e...
+[2025-10-23T11:53:52.259Z] Subscribe RPC call established, waiting for response...
+[2025-10-23T11:53:52.546Z] Fetched 0 events from topic /event/Legal_Entity_Delete__e
+[2025-10-23T11:53:52.548Z] Closed Pub/Sub API connection
+[2025-10-23T11:53:52.549Z] ================================================================================
+[2025-10-23T11:53:52.551Z] RETURNED from fetch_events_via_pubsub
+[2025-10-23T11:53:52.552Z]   - events type: list
+[2025-10-23T11:53:52.553Z]   - events count: 0
+[2025-10-23T11:53:52.554Z] ================================================================================
+[2025-10-23T11:53:52.556Z] Fetched 0 events from topic /event/Legal_Entity_Delete__e
+[2025-10-23T11:53:52.557Z] No replay_id found for topic /event/LP_Consultant_Relationship_Delete__e - will fetch from EARLIEST
+[2025-10-23T11:53:52.559Z] Starting new subscription to /event/LP_Consultant_Relationship_Delete__e (no replay_id, will use EARLIEST)
+[2025-10-23T11:53:52.560Z] ================================================================================
+[2025-10-23T11:53:52.561Z] CALLING fetch_events_via_pubsub for topic: /event/LP_Consultant_Relationship_Delete__e   
+[2025-10-23T11:53:52.563Z]   - access_token: Present (112 chars)
+[2025-10-23T11:53:52.564Z]   - instance_url: https://blueowlcrm.my.salesforce.com
+[2025-10-23T11:53:52.565Z]   - tenant_id: 00D3t000005us1xEAA
+[2025-10-23T11:53:52.567Z]   - replay_id: None
+[2025-10-23T11:53:52.568Z]   - max_events: 100
+[2025-10-23T11:53:52.570Z] ================================================================================
+[2025-10-23T11:53:52.571Z] Connecting to Pub/Sub API at api.pubsub.salesforce.com:7443
+[2025-10-23T11:53:52.572Z] Using tenant_id: 00D3t000005us1xEAA
+[2025-10-23T11:53:52.574Z] Using instance_url: https://blueowlcrm.my.salesforce.com
+[2025-10-23T11:53:52.575Z] Access token length: 112 chars
+[2025-10-23T11:53:52.576Z] ✓ Connected to Salesforce Pub/Sub API at api.pubsub.salesforce.com:7443
+[2025-10-23T11:53:53.619Z] Retrieved topic info for /event/LP_Consultant_Relationship_Delete__e: schema_id=1C9cw85mg9SU6cgh7qgu_w
+[2025-10-23T11:53:54.483Z] Avro schema GET https://blueowlcrm.my.salesforce.com/services/data/v64.0/event/eventSchema/1C9cw85mg9SU6cgh7qgu_w?payloadFormat=COMPACT -> 200
+[2025-10-23T11:53:54.485Z] Retrieved schema for schema_id=1C9cw85mg9SU6cgh7qgu_w via REST
+[2025-10-23T11:53:54.487Z] Using schema for decoding: 1C9cw85mg9SU6cgh7qgu_w
+[2025-10-23T11:53:54.488Z] Subscribing to /event/LP_Consultant_Relationship_Delete__e from EARLIEST (first run)     
+[2025-10-23T11:53:54.490Z] Starting Subscribe RPC call for /event/LP_Consultant_Relationship_Delete__e...
+[2025-10-23T11:53:54.492Z] Subscribe RPC call established, waiting for response...
+[2025-10-23T11:53:54.701Z] Fetched 0 events from topic /event/LP_Consultant_Relationship_Delete__e
+[2025-10-23T11:53:54.703Z] Closed Pub/Sub API connection
+[2025-10-23T11:53:54.705Z] ================================================================================
+[2025-10-23T11:53:54.707Z] RETURNED from fetch_events_via_pubsub
+[2025-10-23T11:53:54.708Z]   - events type: list
+[2025-10-23T11:53:54.710Z]   - events count: 0
+[2025-10-23T11:53:54.711Z] ================================================================================
+[2025-10-23T11:53:54.712Z] Fetched 0 events from topic /event/LP_Consultant_Relationship_Delete__e
+[2025-10-23T11:53:54.714Z] No replay_id found for topic /event/Opportunity_Delete__e - will fetch from EARLIEST     
+[2025-10-23T11:53:54.716Z] Starting new subscription to /event/Opportunity_Delete__e (no replay_id, will use EARLIEST)
+[2025-10-23T11:53:54.718Z] ================================================================================
+[2025-10-23T11:53:54.720Z] CALLING fetch_events_via_pubsub for topic: /event/Opportunity_Delete__e
+[2025-10-23T11:53:54.722Z]   - access_token: Present (112 chars)
+[2025-10-23T11:53:54.724Z]   - instance_url: https://blueowlcrm.my.salesforce.com
+[2025-10-23T11:53:54.726Z]   - tenant_id: 00D3t000005us1xEAA
+[2025-10-23T11:53:54.727Z]   - replay_id: None
+[2025-10-23T11:53:54.728Z]   - max_events: 100
+[2025-10-23T11:53:54.730Z] ================================================================================
+[2025-10-23T11:53:54.731Z] Connecting to Pub/Sub API at api.pubsub.salesforce.com:7443
+[2025-10-23T11:53:54.732Z] Using tenant_id: 00D3t000005us1xEAA
+[2025-10-23T11:53:54.733Z] Using instance_url: https://blueowlcrm.my.salesforce.com
+[2025-10-23T11:53:54.735Z] Access token length: 112 chars
+[2025-10-23T11:53:54.736Z] ✓ Connected to Salesforce Pub/Sub API at api.pubsub.salesforce.com:7443
+[2025-10-23T11:53:55.940Z] Retrieved topic info for /event/Opportunity_Delete__e: schema_id=7oE6I0m-ZVUzfzMGEstCRA
+[2025-10-23T11:53:56.829Z] Avro schema GET https://blueowlcrm.my.salesforce.com/services/data/v64.0/event/eventSchema/7oE6I0m-ZVUzfzMGEstCRA?payloadFormat=COMPACT -> 200
+[2025-10-23T11:53:56.831Z] Retrieved schema for schema_id=7oE6I0m-ZVUzfzMGEstCRA via REST
+[2025-10-23T11:53:56.832Z] Using schema for decoding: 7oE6I0m-ZVUzfzMGEstCRA
+[2025-10-23T11:53:56.833Z] Subscribing to /event/Opportunity_Delete__e from EARLIEST (first run)
+[2025-10-23T11:53:56.834Z] Starting Subscribe RPC call for /event/Opportunity_Delete__e...
+[2025-10-23T11:53:56.835Z] Subscribe RPC call established, waiting for response...
+[2025-10-23T11:53:57.118Z] Fetched 0 events from topic /event/Opportunity_Delete__e
+[2025-10-23T11:53:57.120Z] Closed Pub/Sub API connection
+[2025-10-23T11:53:57.122Z] ================================================================================
+[2025-10-23T11:53:57.123Z] RETURNED from fetch_events_via_pubsub
+[2025-10-23T11:53:57.125Z]   - events type: list
+[2025-10-23T11:53:57.126Z]   - events count: 0
+[2025-10-23T11:53:57.128Z] ================================================================================
+[2025-10-23T11:53:57.129Z] Fetched 0 events from topic /event/Opportunity_Delete__e
+[2025-10-23T11:53:57.130Z] No replay_id found for topic /event/Task_Delete__e - will fetch from EARLIEST
+[2025-10-23T11:53:57.131Z] Starting new subscription to /event/Task_Delete__e (no replay_id, will use EARLIEST)     
+[2025-10-23T11:53:57.132Z] ================================================================================
+[2025-10-23T11:53:57.134Z] CALLING fetch_events_via_pubsub for topic: /event/Task_Delete__e
+[2025-10-23T11:53:57.135Z]   - access_token: Present (112 chars)
+[2025-10-23T11:53:57.136Z]   - instance_url: https://blueowlcrm.my.salesforce.com
+[2025-10-23T11:53:57.138Z]   - tenant_id: 00D3t000005us1xEAA
+[2025-10-23T11:53:57.139Z]   - replay_id: None
+[2025-10-23T11:53:57.140Z]   - max_events: 100
+[2025-10-23T11:53:57.142Z] ================================================================================
+[2025-10-23T11:53:57.143Z] Connecting to Pub/Sub API at api.pubsub.salesforce.com:7443
+[2025-10-23T11:53:57.144Z] Using tenant_id: 00D3t000005us1xEAA
+[2025-10-23T11:53:57.146Z] Using instance_url: https://blueowlcrm.my.salesforce.com
+[2025-10-23T11:53:57.147Z] Access token length: 112 chars
+[2025-10-23T11:53:57.151Z] ✓ Connected to Salesforce Pub/Sub API at api.pubsub.salesforce.com:7443
+[2025-10-23T11:53:58.325Z] Retrieved topic info for /event/Task_Delete__e: schema_id=z9COVj5aaSSHgVbCj62Qhg
+[2025-10-23T11:53:59.149Z] Avro schema GET https://blueowlcrm.my.salesforce.com/services/data/v64.0/event/eventSchema/z9COVj5aaSSHgVbCj62Qhg?payloadFormat=COMPACT -> 200
+[2025-10-23T11:53:59.151Z] Retrieved schema for schema_id=z9COVj5aaSSHgVbCj62Qhg via REST
+[2025-10-23T11:53:59.152Z] Using schema for decoding: z9COVj5aaSSHgVbCj62Qhg
+[2025-10-23T11:53:59.153Z] Subscribing to /event/Task_Delete__e from EARLIEST (first run)
+[2025-10-23T11:53:59.155Z] Starting Subscribe RPC call for /event/Task_Delete__e...
+[2025-10-23T11:53:59.156Z] Subscribe RPC call established, waiting for response...
+[2025-10-23T11:53:59.400Z] Fetched 0 events from topic /event/Task_Delete__e
+[2025-10-23T11:53:59.402Z] Closed Pub/Sub API connection
+[2025-10-23T11:53:59.403Z] ================================================================================
+[2025-10-23T11:53:59.405Z] RETURNED from fetch_events_via_pubsub
+[2025-10-23T11:53:59.406Z]   - events type: list
+[2025-10-23T11:53:59.407Z]   - events count: 0
+[2025-10-23T11:53:59.408Z] ================================================================================
+[2025-10-23T11:53:59.410Z] Fetched 0 events from topic /event/Task_Delete__e
+[2025-10-23T11:53:59.412Z] No new events.
+[2025-10-23T11:53:59.414Z] Salesforce Pub/Sub poller function completed at 2025-10-23T11:53:59.398953
+[2025-10-23T11:53:59.435Z] Executed 'Functions.TimerPoller' (Succeeded, Id=c6a97a16-30c3-4009-8704-0694b7462726, Duration=25958ms)
+[2025-10-23T11:54:24.012Z] The listener for function 'Functions.TimerPoller' was unable to start.
+[2025-10-23T11:54:24.013Z] The listener for function 'Functions.TimerPoller' was unable to start. Azure.Core: Retry failed after 6 tries. Retry settings can be adjusted in ClientOptions.Retry or by configuring a custom retry policy in ClientOptions.RetryPolicy. (No connection could be made because the target machine actively refused it. (127.0.0.1:10000)) (No connection could be made because the target machine actively refused it. (127.0.0.1:10000)) (No connection could be made because the target machine actively refused it. (127.0.0.1:10000)) (No connection could be made because the target machine actively refused it. (127.0.0.1:10000)) (No connection could be made because the target machine actively refused it. (127.0.0.1:10000)) (No connection could be made because the target machine actively refused it. (127.0.0.1:10000)). Azure.Core: No connection could be made because the target machine actively refused it. (127.0.0.1:10000). System.Net.Http: No connection could be made because the target machine actively refused it. (127.0.0.1:10000). System.Net.Sockets: No connection could be made because the target machine actively refused it.       
+[2025-10-23T11:55:06.309Z] The listener for function 'Functions.TimerPoller' was unable to start.
+[2025-10-23T11:55:06.311Z] The listener for function 'Functions.TimerPoller' was unable to start. System.Private.CoreLib: A task was canceled.
