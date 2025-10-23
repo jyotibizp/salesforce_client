@@ -27,10 +27,15 @@ class PubSubClient:
 
     def connect(self):
         """Establish gRPC connection to Salesforce Pub/Sub API"""
+        logging.info("Connecting to Pub/Sub API at %s", PUBSUB_GRPC_ENDPOINT)
+        logging.info("Using tenant_id: %s", self.tenant_id)
+        logging.info("Using instance_url: %s", self.instance_url)
+        logging.info("Access token length: %d chars", len(self.access_token) if self.access_token else 0)
+        
         credentials = grpc.ssl_channel_credentials()
         self.channel = grpc.secure_channel(PUBSUB_GRPC_ENDPOINT, credentials)
         self.stub = pb2_grpc.PubSubStub(self.channel)
-        logging.info("Connected to Salesforce Pub/Sub API at %s", PUBSUB_GRPC_ENDPOINT)
+        logging.info("✓ Connected to Salesforce Pub/Sub API at %s", PUBSUB_GRPC_ENDPOINT)
 
     def close(self):
         """Close gRPC channel"""
@@ -142,13 +147,33 @@ class PubSubClient:
             yield fetch_request
 
         try:
+            logging.info("Starting Subscribe RPC call for %s...", topic_name)
             response_stream = self.stub.Subscribe(request_generator(), metadata=metadata)
+            logging.info("Subscribe RPC call established, waiting for response...")
 
+            response_count = 0
             for fetch_response in response_stream:
+                response_count += 1
+                logging.info("Received fetch_response #%d from stream", response_count)
+                
                 latest_replay_id = fetch_response.latest_replay_id
+                logging.info("latest_replay_id: %s (length: %d bytes)", 
+                           int.from_bytes(latest_replay_id, byteorder="big", signed=False) if latest_replay_id else None,
+                           len(latest_replay_id) if latest_replay_id else 0)
+                
+                pending_num = getattr(fetch_response, "pending_num_requested", 0)
+                logging.info("pending_num_requested: %d", pending_num)
 
-                if not getattr(fetch_response, "events", None):
-                    logging.info("No events in this batch (keepalive or empty response)")
+                events_attr = getattr(fetch_response, "events", None)
+                logging.info("events attribute: %s (type: %s)", 
+                           "Present" if events_attr is not None else "None", 
+                           type(events_attr).__name__)
+                
+                if events_attr is not None:
+                    logging.info("events list length: %d", len(events_attr))
+                
+                if not events_attr:
+                    logging.warning("No events in this batch - empty response or keepalive. Breaking.")
                     # No events, exit the stream
                     break
 

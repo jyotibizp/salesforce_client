@@ -60,7 +60,16 @@ def main(myTimer: func.TimerRequest) -> None:
                 if replay_id:
                     logging.info("Resuming subscription to %s from saved replay_id", topic)
                 else:
-                    logging.info("Starting new subscription to %s from LATEST", topic)
+                    logging.info("Starting new subscription to %s (no replay_id, will use EARLIEST)", topic)
+                
+                logging.info("=" * 80)
+                logging.info("CALLING fetch_events_via_pubsub for topic: %s", topic)
+                logging.info("  - access_token: %s", "Present (%d chars)" % len(access_token) if access_token else "MISSING")
+                logging.info("  - instance_url: %s", instance_url)
+                logging.info("  - tenant_id: %s", tenant_id)
+                logging.info("  - replay_id: %s", "Present (%d bytes)" % len(replay_id) if replay_id else "None")
+                logging.info("  - max_events: 100")
+                logging.info("=" * 80)
                 
                 events = fetch_events_via_pubsub(
                     access_token=access_token,
@@ -70,6 +79,14 @@ def main(myTimer: func.TimerRequest) -> None:
                     replay_id=replay_id,
                     max_events=100,
                 )
+                
+                logging.info("=" * 80)
+                logging.info("RETURNED from fetch_events_via_pubsub")
+                logging.info("  - events type: %s", type(events).__name__)
+                logging.info("  - events count: %d", len(events) if events else 0)
+                if events:
+                    logging.info("  - first event keys: %s", list(events[0].keys()) if events else "N/A")
+                logging.info("=" * 80)
 
             for event in events:
                 collected.append(event)
